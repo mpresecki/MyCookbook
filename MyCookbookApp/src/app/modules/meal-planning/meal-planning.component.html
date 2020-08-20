@@ -1,0 +1,17 @@
+<mat-grid-list cols="7" rowHeight="2:2">
+  <mat-grid-tile *ngFor="let day of meals;" class="meal-day-tile">
+    <mat-grid-tile-header class="meal-date">
+      {{ day.day | date: 'dd.MM.yyyy.' }}
+    </mat-grid-tile-header>
+    <div *ngIf="day.meals != null" class="meal-text-wrapper">    
+      <div *ngFor="let meal of day.meals;" (click)="openDialog(meal)"
+        matRipple
+        matRippleCentered="true"
+        matRippleColor="primary"
+        class="meal-text">
+        {{ meal.mealType }} : {{ meal.recipeName }}
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+

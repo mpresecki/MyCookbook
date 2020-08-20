@@ -1,0 +1,5 @@
+<h2>My Cookbook</h2>
+
+<p *ngIf="recipes == null || recipes.length < 1">Save some recipes from dashboard to view them here!</p>
+
+<app-recipe-list [recipes]="recipes"></app-recipe-list>

@@ -1,0 +1,29 @@
+<mat-nav-list class="recipes">
+  <mat-list-item *ngFor="let recipe of recipes" class="recipe-card-wrapper">  
+    <mat-card class="recipe-card">
+      <mat-card-header>
+        <a routerLink="detail/{{recipe.id}}">
+          <mat-card-title> {{ recipe.name }} </mat-card-title>
+          <mat-card-subtitle> {{ recipe.skillLevel }} </mat-card-subtitle>
+        </a>
+        <span class="spacer"></span>
+        <button *ngIf="!recipe.isSaved" mat-icon-button matTooltip="Save recipe to my cookbook"
+          (click)="saveToCookbook(recipe.id)">
+          <mat-icon>bookmark_border</mat-icon>
+        </button>
+        <button *ngIf="recipe.isSaved" mat-icon-button matTooltip="Remove recipe from my cookbook"
+          (click)="removeFromCookbook(recipe.id)">
+          <mat-icon>bookmark</mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <mat-icon>access_time</mat-icon> Cooking time: {{ recipe.cookingTime }} <br>
+          <mat-icon>room_service</mat-icon> Servings: {{ recipe.servings }} <br>
+          <mat-icon> category</mat-icon> Category: {{ recipe.categoryName }}
+        </div>
+      </mat-card-content>
+    </mat-card> 
+    <!--<button class="delete" title="delete recipe" matTooltip="Deletes recipe" (click)="delete(recipe)">x</button>-->
+  </mat-list-item>
+</mat-nav-list>

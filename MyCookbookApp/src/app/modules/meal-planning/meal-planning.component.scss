@@ -1,0 +1,33 @@
+mat-grid-list {
+    width: 80%;
+    margin: auto;
+
+    .meal-day-tile{
+        background-color: white;
+    }
+
+    .meal-date {
+        font-size: small;
+    }
+
+    .meal-text-wrapper{
+        position: absolute;
+        left: 0;
+        top: 4em;
+        padding-left: 4px;
+
+        .meal-text{ 
+            cursor: pointer;
+            width: 150px;
+            height: 30px;
+        
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        
+            -webkit-user-drag: none;
+            -webkit-tap-highlight-color: transparent;
+      }
+    }
+}
