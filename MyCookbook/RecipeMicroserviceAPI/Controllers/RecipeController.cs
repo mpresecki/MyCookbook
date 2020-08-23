@@ -65,5 +65,26 @@ namespace RecipeMicroserviceAPI.Controllers
         {
             await _service.DeleteRecipeAsync(recipeId);
         }
+
+        [HttpGet]
+        [Route("categories")]
+        public async Task<List<RecipeCategoryModel>> GetRecipeCategoriesAsync()
+        {
+            return await _service.GetAllCategoriesAsync();
+        }
+
+        [HttpGet]
+        [Route("skills")]
+        public async Task<List<SkillLevelModel>> GetSkillLevelsAsync()
+        {
+            return await _service.GetAllSkillsAsync();
+        }
+
+        [HttpGet]
+        [Route("units")]
+        public async Task<List<UnitModel>> GetUnitsAsync()
+        {
+            return await _service.GetAllUnitsAsync();
+        }
     }
 }

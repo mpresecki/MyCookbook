@@ -20,18 +20,31 @@ namespace RecipeMicroserviceAPI.Business.Services
 
         private readonly IRepository<PreparationStep> _preparationStepRepository;
 
+        private readonly IRepository<RecipeCategory> _categoriesRepository;
+
+        private readonly IRepository<SkillLevel> _skillsRepository;
+
+        private readonly IRepository<Unit> _unitsRepository;
+
         private readonly RecipeContext _context;
 
         private readonly ICookbookService _cookbookService;
 
         public RecipeService(IMapper mapper, 
-            IRepository<Recipe> repository, IRepository<PreparationStep> prepStepRepository,
+            IRepository<Recipe> repository,
+            IRepository<PreparationStep> prepStepRepository,
+            IRepository<RecipeCategory> categoriesRepository,
+            IRepository<SkillLevel> skillsRepository,
+            IRepository<Unit> unitsRepository,
             RecipeContext context,
             ICookbookService cookbookService)
         {
             _mapper = mapper;
             _repository = repository;
             _preparationStepRepository = prepStepRepository;
+            _categoriesRepository = categoriesRepository;
+            _skillsRepository = skillsRepository;
+            _unitsRepository = unitsRepository;
             _context = context;
             _cookbookService = cookbookService;
         }
@@ -108,6 +121,36 @@ namespace RecipeMicroserviceAPI.Business.Services
         public async Task DeleteRecipeAsync(long id)
         {
             await _repository.DeleteAsync(id);
+        }
+
+        public async Task<List<RecipeCategoryModel>> GetAllCategoriesAsync()
+        {
+            var categoriesQuery = _categoriesRepository.GetAll().AsNoTracking();
+            var categories = await categoriesQuery
+                .AsNoTracking()
+                .ProjectTo<RecipeCategoryModel>(_mapper.ConfigurationProvider)
+                .ToListAsync();
+            return categories;
+        }
+
+        public async Task<List<SkillLevelModel>> GetAllSkillsAsync()
+        {
+            var skillsQuery = _skillsRepository.GetAll().AsNoTracking();
+            var skills = await skillsQuery
+                .AsNoTracking()
+                .ProjectTo<SkillLevelModel>(_mapper.ConfigurationProvider)
+                .ToListAsync();
+            return skills;
+        }
+
+        public async Task<List<UnitModel>> GetAllUnitsAsync()
+        {
+            var unitsQuery = _unitsRepository.GetAll().AsNoTracking();
+            var units = await unitsQuery
+                .AsNoTracking()
+                .ProjectTo<UnitModel>(_mapper.ConfigurationProvider)
+                .ToListAsync();
+            return units;
         }
 
         private async Task UpdateRecipeIngredients(RecipeInsertModel recipe, Recipe recipeEntity)

@@ -176,19 +176,7 @@ namespace RecipeMicroserviceAPI.Data
                     UnitName = Constants.UNIT_VOLUME_CUP.Name,
                     UnitAbbreviation = Constants.UNIT_VOLUME_CUP.Abbreviation,
                     UnitType = Entities.UnitType.Volume
-                },
-            new Entities.Unit
-                {
-                    UnitName = Constants.UNIT_VOLUME_PINT.Name,
-                    UnitAbbreviation = Constants.UNIT_VOLUME_PINT.Abbreviation,
-                    UnitType = Entities.UnitType.Volume
-                },
-            new Entities.Unit
-                {
-                    UnitName = Constants.UNIT_VOLUME_FLUID_OUNCE.Name,
-                    UnitAbbreviation = Constants.UNIT_VOLUME_FLUID_OUNCE.Abbreviation,
-                    UnitType = Entities.UnitType.Volume
-                },
+                }
         };
 
     }

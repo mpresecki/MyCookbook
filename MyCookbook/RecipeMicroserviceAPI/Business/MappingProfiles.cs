@@ -33,6 +33,8 @@ namespace RecipeMicroserviceAPI.Business
             CreateMap<IngredientModel, Ingredient>();
 
             CreateMap<Unit, UnitModel>();
+            CreateMap<RecipeCategory, RecipeCategoryModel>();
+            CreateMap<SkillLevel, SkillLevelModel>();
 
             CreateMap<PreparationStep, PreparationStepModel>();
             CreateMap<PreparationStepModel, PreparationStep>();

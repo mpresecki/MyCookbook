@@ -17,5 +17,11 @@ namespace RecipeMicroserviceAPI.Business.Services
         Task UpdateRecipeAsync(RecipeInsertModel recipe);
 
         Task DeleteRecipeAsync(long id);
+
+        Task<List<RecipeCategoryModel>> GetAllCategoriesAsync();
+
+        Task<List<SkillLevelModel>> GetAllSkillsAsync();
+
+        Task<List<UnitModel>> GetAllUnitsAsync();
     }
 }

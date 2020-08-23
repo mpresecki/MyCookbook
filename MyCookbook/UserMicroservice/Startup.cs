@@ -17,7 +17,6 @@ using AutoMapper;
 using UserMicroserviceAPI.Business;
 using UserMicroserviceAPI.Business.Services;
 using Microsoft.OpenApi.Models;
-using MassTransit;
 using UserMicroserviceAPI.Helpers;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
