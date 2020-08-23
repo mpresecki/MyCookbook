@@ -1,6 +1,7 @@
 <app-add-recipe 
   *ngIf="showEditRecipe"
-  [recipeEdit]="recipe">
+  [recipeEdit]="recipe"
+  (showEditor)="showEditRecipe=$event">
 </app-add-recipe>
 
 <mat-card class="recipe-card">

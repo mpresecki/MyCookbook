@@ -7,7 +7,8 @@
   Add new recipe
 </button>
 <app-add-recipe 
-  *ngIf="showAddRecipe">
+  *ngIf="showAddRecipe"
+  (showEditor)="showAddRecipe=$event">
 </app-add-recipe>
 
 <app-recipe-list [recipes]="recipes"></app-recipe-list>

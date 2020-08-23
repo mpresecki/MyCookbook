@@ -7,6 +7,9 @@ import { Recipe, RecipeInsert, RecipeModel } from '../../shared/models/recipe';
 import { Ingredient } from '../../shared/models/ingredient';
 import { AuthenticationService } from './authentication.service';
 import { User } from 'src/app/shared/models/user';
+import { RecipeCategory } from 'src/app/shared/models/recipe-category';
+import { Skill } from 'src/app/shared/models/skill-types';
+import { Unit } from 'src/app/shared/models/unit-types';
 
 @Injectable({
   providedIn: 'root'
@@ -79,6 +82,36 @@ export class RecipeService {
     return this.http.delete<number>(url).pipe(
       tap(_ => console.log(`deleted recipe`)),
       catchError(this.handleError<RecipeInsert>('deleteRecipe'))
+    );
+  }
+
+  /** GET: get recipe categories */
+  getRecipeCategories(): Observable<RecipeCategory[]> {
+    const url = this.baseUrl + '/Recipe/categories';
+    return this.http.get<RecipeCategory[]>(url).pipe(
+      tap(_ =>
+        console.log('fetched recipe categories')),
+        catchError(this.handleError<RecipeCategory[]>('getRecipeCategories', []))
+    );
+  }
+
+  /** GET: get skill levels */
+  getSkillLevels(): Observable<Skill[]> {
+    const url = this.baseUrl + '/Recipe/skills';
+    return this.http.get<Skill[]>(url).pipe(
+      tap(_ =>
+        console.log('fetched skill levels')),
+        catchError(this.handleError<Skill[]>('getSkillLevels', []))
+    );
+  }
+
+  /** GET: get units */
+  getUnits(): Observable<Unit[]> {
+    const url = this.baseUrl + '/Recipe/units';
+    return this.http.get<Unit[]>(url).pipe(
+      tap(_ =>
+        console.log('fetched units')),
+        catchError(this.handleError<Unit[]>('getUnits', []))
     );
   }
 

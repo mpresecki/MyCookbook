@@ -1,4 +1,9 @@
-export const RecipeCategory = [
+export interface RecipeCategory {
+    id: number;
+    categoryName: string;
+}
+
+export const RecipeCategories = [
     { name : 'Warm appetizer', value : 1 },
     { name : 'Cold appetizer', value : 2 },
     { name : 'Main dish', value : 3 },

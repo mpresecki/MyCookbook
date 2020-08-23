@@ -23,8 +23,8 @@
   <mat-form-field>
     <mat-label>Skill level</mat-label>
     <mat-select name="skillLevel" required formControlName="skillLevel">
-      <mat-option *ngFor="let skill of skillTypes" [value]="skill.value">
-        {{skill.name}}
+      <mat-option *ngFor="let skill of skillTypes" [value]="skill.id">
+        {{skill.levelName}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -32,8 +32,8 @@
   <mat-form-field>
     <mat-label>Recipe category</mat-label>
     <mat-select name="category" required formControlName="category">
-      <mat-option *ngFor="let category of recipeCategories" [value]="category.value">
-        {{category.name}}
+      <mat-option *ngFor="let category of recipeCategories" [value]="category.id">
+        {{category.categoryName}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -64,8 +64,8 @@
                 <mat-form-field>
                   <mat-label>Unit</mat-label>
                   <mat-select name="unit" required formControlName="unitId">
-                    <mat-option *ngFor="let unit of unitTypes" [value]="unit.value">
-                      {{unit.name}}
+                    <mat-option *ngFor="let unit of unitTypes" [value]="unit.id">
+                      {{unit.unitName}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
@@ -109,5 +109,9 @@
     matTooltip="Saves recipe"
     [disabled]="!recipeForm.valid || !ingredientsForm.valid || !prepStepsForm.valid"
     (click)="save()">Save</button>
+
+    <button mat-button 
+    matTooltip="Cancel editing"
+    (click)="showEditor.emit(false)">Cancel</button>
 </form>
 

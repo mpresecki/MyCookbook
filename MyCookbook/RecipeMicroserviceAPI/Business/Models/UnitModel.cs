@@ -8,6 +8,8 @@ namespace RecipeMicroserviceAPI.Business.Models
 {
     public class UnitModel
     {
+        public long Id { get; set; }
+
         public string UnitName { get; set; }
 
         public string UnitAbbreviation { get; set; }

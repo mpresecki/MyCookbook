@@ -1,3 +1,10 @@
+export interface Unit {
+    id: number;
+    unitName: string;
+    unitAbbreviation: string;
+    unitType: number;
+}
+
 export const UnitTypes = [
     { name : 'Gram', value : 1 },
     { name : 'Decagram', value : 2},

@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { SkillTypes } from 'src/app/shared/models/skill-types';
-import { RecipeCategory } from 'src/app/shared/models/recipe-category';
-import { UnitTypes } from 'src/app/shared/models/unit-types';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { SkillTypes, Skill } from 'src/app/shared/models/skill-types';
+import { RecipeCategories, RecipeCategory } from 'src/app/shared/models/recipe-category';
+import { UnitTypes, Unit } from 'src/app/shared/models/unit-types';
 import { Ingredient } from 'src/app/shared/models/ingredient';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
@@ -25,9 +25,9 @@ export class AddRecipeComponent implements OnInit {
   prepStepsFormArray: FormArray;
 
   currentUser: User;
-  skillTypes = SkillTypes;
-  recipeCategories = RecipeCategory;
-  unitTypes = UnitTypes;
+  skillTypes: Skill[];
+  recipeCategories: RecipeCategory[];
+  unitTypes: Unit[];
 
   foundIngredients$: Observable<Ingredient[]>;
   private searchTerms = new Subject<string>();
@@ -36,6 +36,9 @@ export class AddRecipeComponent implements OnInit {
 
   @Input()
   recipeEdit: RecipeModel = null;
+
+  @Output()
+  showEditor = new EventEmitter<boolean>();
 
   constructor(
     private recipeService: RecipeService,
@@ -76,9 +79,13 @@ export class AddRecipeComponent implements OnInit {
     }));
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.recipe.recipeIngredients = [{ingredientId: 0, unitId: 0, quantity: 1}];
     this.recipe.preparationSteps = [{stepNumber: 1, stepText: ''}];
+
+    this.recipeCategories = await this.recipeService.getRecipeCategories().toPromise();
+    this.skillTypes = await this.recipeService.getSkillLevels().toPromise();
+    this.unitTypes = await this.recipeService.getUnits().toPromise();
 
     if (this.recipeEdit != null) {
       this.initRecipeEdit();
@@ -128,8 +135,8 @@ export class AddRecipeComponent implements OnInit {
 
   initRecipeEdit(){
     this.recipe.id = this.recipeEdit.id;
-    const skillLevelId = this.skillTypes.find(s => s.name === this.recipeEdit.skillLevel).value;
-    const recipeCategoryId = this.recipeCategories.find(s => s.name === this.recipeEdit.categoryName).value;
+    const skillLevelId = this.skillTypes.find(s => s.levelName === this.recipeEdit.skillLevel).id;
+    const recipeCategoryId = this.recipeCategories.find(s => s.categoryName === this.recipeEdit.categoryName).id;
 
     this.recipeForm = this.fb.group({
       recipeName: [this.recipeEdit.name, [Validators.required]],
@@ -144,7 +151,7 @@ export class AddRecipeComponent implements OnInit {
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < this.recipeEdit.recipeIngredients.length; i++) {
       const element = this.recipeEdit.recipeIngredients[i];
-      const unitId = this.unitTypes.find(s => s.name.toLowerCase() === element.unit.toLowerCase()).value;
+      const unitId = this.unitTypes.find(s => s.unitName.toLowerCase() === element.unit.toLowerCase()).id;
       this.recipeService.searchIngredients(element.ingredient, true).subscribe(data => {
         const ingr = data[0];
         this.ingredientsFormArray.push(this.fb.group({
