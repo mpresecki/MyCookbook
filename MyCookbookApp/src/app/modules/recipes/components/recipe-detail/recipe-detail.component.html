@@ -1,49 +1,63 @@
-<app-add-recipe 
+<app-add-recipe
   *ngIf="showEditRecipe"
   [recipeEdit]="recipe"
-  (showEditor)="showEditRecipe=$event">
+  (showEditor)="showEditRecipe = $event"
+>
 </app-add-recipe>
 
-<mat-card class="recipe-card">
-  <mat-card-header>
-    <mat-card-title> {{ recipe.name }} </mat-card-title>
-    <mat-card-subtitle> Created by {{ recipe.userId }} </mat-card-subtitle>
-    <span class="spacer"></span>
-    <button mat-icon-button matTooltip="Plan a meal" (click)="openDialog(recipe)">
-      <mat-icon>date_range</mat-icon>
-    </button>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Icon-button with a menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="editRecipe()">
-        <mat-icon>edit</mat-icon>
-        <span>Edit recipe</span>
+<div class="cards-container">
+  <mat-card class="recipe-card">
+    <mat-card-header>
+      <mat-card-title> {{ recipe.name }} </mat-card-title>
+      <mat-card-subtitle> Created by {{ recipe.userId }} </mat-card-subtitle>
+      <span class="spacer"></span>
+      <button
+        mat-icon-button
+        matTooltip="Plan a meal"
+        (click)="openDialog(recipe)"
+      >
+        <mat-icon>date_range</mat-icon>
       </button>
-      <button mat-menu-item (click)="deleteRecipe()">
-        <mat-icon>delete</mat-icon>
-        <span>Delete recipe</span>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
       </button>
-    </mat-menu>
-  </mat-card-header>
-  <mat-card-content>
-    <div>
-      Skill level: {{ recipe.skillLevel }} <br>
-      Cooking time: {{ recipe.cookingTime }} <br>
-      Servings: {{ recipe.servings }} <br>
-      Category: {{ recipe.categoryName }}
-    </div>  
-    <div>
-      <h3>Ingredients:</h3>
-      <div *ngFor="let ingredient of recipe.recipeIngredients">
-        {{ingredient.quantity}} {{ingredient.unit}} {{ ingredient.ingredient}}
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="editRecipe()">
+          <mat-icon>edit</mat-icon>
+          <span>Edit recipe</span>
+        </button>
+        <button mat-menu-item (click)="deleteRecipe()">
+          <mat-icon>delete</mat-icon>
+          <span>Delete recipe</span>
+        </button>
+      </mat-menu>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        Skill level: {{ recipe.skillLevel }} <br />
+        Cooking time: {{ recipe.cookingTime }} <br />
+        Servings: {{ recipe.servings }} <br />
+        Category: {{ recipe.categoryName }}
       </div>
-    </div>
-    <div>
-      <h3>Preparation steps:</h3>
-      <div *ngFor="let step of recipe.preparationSteps">
-        {{step.stepNumber}}. {{step.stepText}}
+      <div>
+        <h3>Ingredients:</h3>
+        <div *ngFor="let ingredient of recipe.recipeIngredients">
+          {{ ingredient.quantity }} {{ ingredient.unit }}
+          {{ ingredient.ingredient }}
+        </div>
       </div>
-    </div>
-  </mat-card-content>
-</mat-card> 
+      <div>
+        <h3>Preparation steps:</h3>
+        <div *ngFor="let step of recipe.preparationSteps">
+          {{ step.stepNumber }}. {{ step.stepText }}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <app-unit-conversion class="conversion-card"></app-unit-conversion>
+</div>

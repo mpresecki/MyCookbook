@@ -1,0 +1,91 @@
+<mat-card class="conversion-card">
+  <mat-card-header>
+    <mat-card-title>Unit converter</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <span>From:</span>
+      <mat-form-field>
+        <mat-label>Value: </mat-label>
+        <input matInput type="number" [(ngModel)]="conversionUnits.quantityFrom" required/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Unit:</mat-label>
+        <mat-select name="unit" required [(ngModel)]="conversionUnits.unitFrom">
+          <mat-option *ngFor="let unit of unitTypes" [value]="unit">
+            {{unit.unitName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> <br/>
+
+      <mat-icon>arrow_downward</mat-icon> <br/>
+
+      <span>To:</span>
+      <mat-form-field>
+        <mat-label>Value: </mat-label>
+        <input matInput disabled [(ngModel)]="conversionUnits.quantityTo"/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Unit:</mat-label>
+        <mat-select name="unit" required [(ngModel)]="conversionUnits.unitTo">
+          <mat-option *ngFor="let unit of unitTypes" [value]="unit">
+            {{unit.unitName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br/>
+
+      <button mat-raised-button (click)="clearUnits()" matToolTip="Clears input">
+        Clear
+      </button>
+      <button mat-raised-button color="primary" (click)="convertUnits()" matToolTip="Converts unit">
+        Convert
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card> 
+
+<mat-card class="conversion-card">
+  <mat-card-header>
+    <mat-card-title>Temperature converter</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <span>From:</span>
+      <mat-form-field>
+        <mat-label>Value: </mat-label>
+        <input matInput type="number" [(ngModel)]="conversionTemperature.quantityFrom" required/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Unit:</mat-label>
+        <mat-select name="unit" required [(ngModel)]="conversionTemperature.unitFrom">
+          <mat-option *ngFor="let unit of temperatureUnits" [value]="unit">
+            {{unit.unitName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> <br/>
+
+      <mat-icon>arrow_downward</mat-icon> <br/>
+
+      <span>To:</span>
+      <mat-form-field>
+        <mat-label>Value: </mat-label>
+        <input matInput disabled [(ngModel)]="conversionTemperature.quantityTo"/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Unit:</mat-label>
+        <mat-select name="unit" required [(ngModel)]="conversionTemperature.unitTo">
+          <mat-option *ngFor="let unit of temperatureUnits" [value]="unit">
+            {{unit.unitName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br/>
+
+      <button mat-raised-button (click)="clearTemperature()" matToolTip="Clears input">
+        Clear
+      </button>
+      <button mat-raised-button color="primary" (click)="convertTemperature()" matToolTip="Converts temperature">
+        Convert
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card> 

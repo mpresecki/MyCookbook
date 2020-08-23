@@ -27,6 +27,8 @@ namespace ConversionMicroserviceAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddTransient<IConversionService, ConversionService>();
 
             services.AddControllers();
@@ -53,6 +55,8 @@ namespace ConversionMicroserviceAPI
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
+
+            app.UseHttpsRedirection();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.

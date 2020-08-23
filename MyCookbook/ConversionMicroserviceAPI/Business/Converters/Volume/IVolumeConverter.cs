@@ -11,6 +11,6 @@ namespace ConversionMicroserviceAPI.Business.Converters
 
         public string UnitFrom { get; }
 
-        public abstract double Convert(double unit);
+        public abstract decimal Convert(decimal unit);
     }
 }

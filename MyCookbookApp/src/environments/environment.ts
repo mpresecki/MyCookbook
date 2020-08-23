@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   recipeApi: 'http://localhost:57397/api',
   userApi: 'http://localhost:57844/api/User',
-  mealApi: 'http://localhost:55497/api/Meal'
+  mealApi: 'http://localhost:55497/api/Meal',
+  conversionApi: 'http://localhost:60608/api/Converter'
 };
 
 /*

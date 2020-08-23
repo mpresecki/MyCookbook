@@ -18,7 +18,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
 
         public abstract string UnitFrom { get; }
 
-        public abstract double Convert(double unit);
+        public abstract decimal Convert(decimal unit);
 
         public static void CreateToTeaspoonConverters()
         {
@@ -34,9 +34,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_MILLILITER.Name;
 
-        public override double Convert(double milliliters)
+        public override decimal Convert(decimal milliliters)
         {
-            return milliliters * 0.202884136;
+            return milliliters * (decimal)0.202884136;
         }
     }
 
@@ -44,9 +44,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_LITER.Name;
 
-        public override double Convert(double liters)
+        public override decimal Convert(decimal liters)
         {
-            return liters * 202.884136;
+            return liters * (decimal)202.884136;
         }
     }
 
@@ -54,9 +54,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_DECILITER.Name;
 
-        public override double Convert(double deciliters)
+        public override decimal Convert(decimal deciliters)
         {
-            return deciliters * 20.2884136;
+            return deciliters * (decimal)20.2884136;
         }
     }
 
@@ -64,7 +64,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_TABLESPOON.Name;
 
-        public override double Convert(double tablespoons)
+        public override decimal Convert(decimal tablespoons)
         {
             return tablespoons * 3;
         }
@@ -74,7 +74,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_CUP.Name;
 
-        public override double Convert(double cups)
+        public override decimal Convert(decimal cups)
         {
             return cups * 48;
         }

@@ -7,14 +7,14 @@ namespace ConversionMicroserviceAPI.Business.Converters
 {
     public abstract class ToFahrenheitConverter
     {
-        public abstract double Convert(double degrees);
+        public abstract decimal Convert(decimal degrees);
     }
 
     public class CelsiusToFahrenheitConverter : ToFahrenheitConverter
     {
-        public override double Convert(double degrees)
+        public override decimal Convert(decimal degrees)
         {
-            return degrees * 1.8 + 32;
+            return (degrees * (decimal)1.8) + 32;
         }
     }
 }

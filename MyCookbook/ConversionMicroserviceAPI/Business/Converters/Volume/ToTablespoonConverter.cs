@@ -18,7 +18,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
 
         public abstract string UnitFrom { get; }
 
-        public abstract double Convert(double unit);
+        public abstract decimal Convert(decimal unit);
 
         public static void CreateToTablespoonConverters()
         {
@@ -34,9 +34,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_MILLILITER.Name;
 
-        public override double Convert(double milliliters)
+        public override decimal Convert(decimal milliliters)
         {
-            return milliliters * 0.0676280454;
+            return milliliters * (decimal)0.0676280454;
         }
     }
 
@@ -44,9 +44,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_LITER.Name;
 
-        public override double Convert(double liters)
+        public override decimal Convert(decimal liters)
         {
-            return liters * 67.6280454;
+            return liters * (decimal)67.6280454;
         }
     }
 
@@ -54,9 +54,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_DECILITER.Name;
 
-        public override double Convert(double deciliters)
+        public override decimal Convert(decimal deciliters)
         {
-            return deciliters * 6.76280454;
+            return deciliters * (decimal)6.76280454;
         }
     }
 
@@ -64,9 +64,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_TEASPOON.Name;
 
-        public override double Convert(double teaspoons)
+        public override decimal Convert(decimal teaspoons)
         {
-            return teaspoons * 0.333333333;
+            return teaspoons * (decimal)0.333333333;
         }
     }
 
@@ -74,7 +74,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_CUP.Name;
 
-        public override double Convert(double cups)
+        public override decimal Convert(decimal cups)
         {
             return cups * 16;
         }

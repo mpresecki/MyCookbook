@@ -18,7 +18,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
 
         public abstract string UnitFrom { get; }
 
-        public abstract double Convert(double unit);
+        public abstract decimal Convert(decimal unit);
 
         public static void CreateToMilliliterConverters()
         {
@@ -34,7 +34,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_LITER.Name;
 
-        public override double Convert(double liters)
+        public override decimal Convert(decimal liters)
         {
             return liters * 1000;
         }
@@ -44,7 +44,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_DECILITER.Name;
 
-        public override double Convert(double deciliters)
+        public override decimal Convert(decimal deciliters)
         {
             return deciliters * 100;
         }
@@ -54,9 +54,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_TEASPOON.Name;
 
-        public override double Convert(double teaspoons)
+        public override decimal Convert(decimal teaspoons)
         {
-            return teaspoons * 4.92892159;
+            return teaspoons * (decimal)4.92892159;
         }
     }
 
@@ -64,9 +64,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_TABLESPOON.Name;
 
-        public override double Convert(double tablespoons)
+        public override decimal Convert(decimal tablespoons)
         {
-            return tablespoons * 14.7867648;
+            return tablespoons * (decimal)14.7867648;
         }
     }
 
@@ -74,9 +74,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_CUP.Name;
 
-        public override double Convert(double cups)
+        public override decimal Convert(decimal cups)
         {
-            return cups * 236.588237;
+            return cups * (decimal)236.588237;
         }
     }
 }

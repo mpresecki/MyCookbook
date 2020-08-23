@@ -18,7 +18,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
 
         public abstract string UnitFrom { get; }
 
-        public abstract double Convert(double unit);
+        public abstract decimal Convert(decimal unit);
 
         public static void CreateToGramConverters()
         {
@@ -33,7 +33,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_MASS_KILOGRAM.Name;
 
-        public override double Convert(double kilograms)
+        public override decimal Convert(decimal kilograms)
         {
             return kilograms * 1000;
         }
@@ -43,7 +43,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_MASS_DECAGRAM.Name;
 
-        public override double Convert(double decagrams)
+        public override decimal Convert(decimal decagrams)
         {
             return decagrams * 10;
         }
@@ -53,7 +53,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_MASS_MILLIGRAM.Name;
 
-        public override double Convert(double milligram)
+        public override decimal Convert(decimal milligram)
         {
             return milligram / 1000;
         }
@@ -63,9 +63,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_MASS_POUND.Name;
 
-        public override double Convert(double pounds)
+        public override decimal Convert(decimal pounds)
         {
-            return pounds * 453.59237;
+            return pounds * (decimal)453.59237;
         }
     }
 }

@@ -10,6 +10,7 @@ import { AddRecipeComponent } from './components/add-recipe/add-recipe.component
 import { CookbookComponent } from './pages/cookbook/cookbook.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddMealComponent } from './dialogs/add-meal/add-meal.component';
+import { UnitConversionComponent } from './components/unit-conversion/unit-conversion.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -32,7 +33,8 @@ const routes: Routes = [
     AddRecipeComponent,
     CookbookComponent,
     DashboardComponent,
-    AddMealComponent
+    AddMealComponent,
+    UnitConversionComponent
   ]
 })
 export class RecipesModule { }

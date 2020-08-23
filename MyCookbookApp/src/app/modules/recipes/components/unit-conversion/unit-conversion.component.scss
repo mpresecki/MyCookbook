@@ -1,0 +1,16 @@
+.conversion-card {
+    text-align: center;
+    margin: 0px 5px 5px 5px;
+
+    & mat-form-field{
+        width: 45%;
+        margin: 2px;
+    }
+
+    & span {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        text-align: left;
+    }
+}

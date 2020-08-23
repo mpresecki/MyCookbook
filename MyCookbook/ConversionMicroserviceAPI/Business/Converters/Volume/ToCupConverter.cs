@@ -18,7 +18,7 @@ namespace ConversionMicroserviceAPI.Business.Converters
 
         public abstract string UnitFrom { get; }
 
-        public abstract double Convert(double unit);
+        public abstract decimal Convert(decimal unit);
 
         public static void CreateToCupConverters()
         {
@@ -34,9 +34,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_MILLILITER.Name;
 
-        public override double Convert(double milliliters)
+        public override decimal Convert(decimal milliliters)
         {
-            return milliliters * 0.00422675284;
+            return milliliters * (decimal)0.00422675284;
         }
     }
 
@@ -44,9 +44,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_LITER.Name;
 
-        public override double Convert(double liters)
+        public override decimal Convert(decimal liters)
         {
-            return liters * 4.22675284;
+            return liters * (decimal)4.22675284;
         }
     }
 
@@ -54,9 +54,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_DECILITER.Name;
 
-        public override double Convert(double deciliters)
+        public override decimal Convert(decimal deciliters)
         {
-            return deciliters * 0.422675284;
+            return deciliters * (decimal)0.422675284;
         }
     }
 
@@ -64,9 +64,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_TEASPOON.Name;
 
-        public override double Convert(double teaspoons)
+        public override decimal Convert(decimal teaspoons)
         {
-            return teaspoons * 0.0208333333;
+            return teaspoons * (decimal)0.0208333333;
         }
     }
 
@@ -74,9 +74,9 @@ namespace ConversionMicroserviceAPI.Business.Converters
     {
         public override string UnitFrom => Constants.UNIT_VOLUME_TABLESPOON.Name;
 
-        public override double Convert(double tablespoons)
+        public override decimal Convert(decimal tablespoons)
         {
-            return tablespoons * 0.0625;
+            return tablespoons * (decimal)0.0625;
         }
     }
 }

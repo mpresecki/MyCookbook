@@ -9,11 +9,27 @@
   </nav>
   
   <span class="spacer"></span>
-  <button *ngIf="currentUser" mat-button (click)="logout()">
-    Logout
-  </button>
+
+  <div class="user-menu" *ngIf="currentUser">
+    <span>Hello, {{ this.currentUser.firstName }}!</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="User icon-button with a menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span>My recipes</span>
+      </button>
+      <button mat-menu-item>
+        <span>User profile</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+
   <button *ngIf="!currentUser" mat-button click="/login">
-    Login
+    Login/Registration
   </button>
 </mat-toolbar>
 
