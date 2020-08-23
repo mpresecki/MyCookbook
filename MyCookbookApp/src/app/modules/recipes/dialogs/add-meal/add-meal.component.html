@@ -28,3 +28,7 @@
   <button mat-button (click)="onSaveClick()" cdkFocusInitial>Save</button>
 </div>
 
+<div class="spinner-overlay" *ngIf="isSaving">
+  <mat-spinner class="spinner" color="accent"></mat-spinner>
+</div>
+

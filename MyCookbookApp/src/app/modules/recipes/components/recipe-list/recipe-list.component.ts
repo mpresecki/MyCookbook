@@ -14,6 +14,8 @@ export class RecipeListComponent implements OnInit {
   @Input()
   recipes: Recipe[];
 
+  isSaving = false;
+
   private currentUser: User;
 
   constructor(
@@ -31,12 +33,20 @@ export class RecipeListComponent implements OnInit {
   }
 
   saveToCookbook(recipeId: number){
+    this.isSaving = true;
     this.cookbookService.addCookbookRecipe(recipeId, this.currentUser.id)
-      .subscribe(_ => location.reload());
+      .subscribe(_ => {
+        this.isSaving = false;
+        location.reload();
+      });
   }
 
   removeFromCookbook(recipeId: number){
+    this.isSaving = true;
     this.cookbookService.deleteCookbookRecipe(recipeId, this.currentUser.id)
-      .subscribe(_ => location.reload());
+      .subscribe(_ => {
+        this.isSaving = false;
+        location.reload();
+      });
   }
 }

@@ -79,7 +79,7 @@
               </div>
           </div>
       </div>
-      <button mat-raised-button type="button" (click)="addIngredient()">Add</button>
+      <button mat-raised-button type="button" (click)="addIngredient()" matToolTip="Add new ingredient">Add</button>
     </form>
   </div>
   
@@ -101,8 +101,12 @@
               </div>
           </div>
       </div>
-      <button mat-raised-button type="button" (click)="addPrepStep()">Add</button>
+      <button mat-raised-button type="button" (click)="addPrepStep()" matToolTip="Add preparation step">Add</button>
     </form>
+  </div>
+
+  <div class="spinner-overlay" *ngIf="isSaving">
+    <mat-spinner class="spinner" color="accent"></mat-spinner>
   </div>
 
   <button mat-button 

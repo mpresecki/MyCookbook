@@ -34,6 +34,8 @@ export class AddRecipeComponent implements OnInit {
 
   recipe: RecipeInsert = new RecipeInsert();
 
+  isSaving = false;
+
   @Input()
   recipeEdit: RecipeModel = null;
 
@@ -110,6 +112,8 @@ export class AddRecipeComponent implements OnInit {
   }
 
   save(){
+    this.isSaving = true;
+
     this.recipe.userId = this.currentUser.id;
     this.recipe.name = this.recipeForm.value.recipeName;
     this.recipe.servings = this.recipeForm.value.servings;
@@ -126,10 +130,16 @@ export class AddRecipeComponent implements OnInit {
 
     if (this.recipeEdit != null) {
       console.log(this.recipe);
-      this.recipeService.updateRecipe(this.recipe).subscribe(_ => console.log(_));
+      this.recipeService.updateRecipe(this.recipe).subscribe(_ => {
+        this.isSaving = false;
+        console.log(_);
+      });
     }
     else {
-      this.recipeService.addRecipe(this.recipe).subscribe(_ => location.reload());
+      this.recipeService.addRecipe(this.recipe).subscribe(_ => {
+        this.isSaving = false;
+        location.reload();
+      });
     }
   }
 

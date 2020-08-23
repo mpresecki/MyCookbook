@@ -27,3 +27,7 @@
     <!--<button class="delete" title="delete recipe" matTooltip="Deletes recipe" (click)="delete(recipe)">x</button>-->
   </mat-list-item>
 </mat-nav-list>
+
+<div class="spinner-overlay" *ngIf="isSaving">
+  <mat-spinner class="spinner" color="accent"></mat-spinner>
+</div>

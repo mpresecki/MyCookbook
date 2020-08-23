@@ -25,6 +25,7 @@ export interface DialogData {
 export class AddMealComponent implements OnInit {
   mealTypes = MealTypes;
   currentUser: User;
+  isSaving = false;
 
   constructor(
     public dialogRef: MatDialogRef<AddMealComponent>,
@@ -38,6 +39,7 @@ export class AddMealComponent implements OnInit {
   }
 
   onSaveClick(): void {
+    this.isSaving = true;
     if (this.data.mealDate != null && this.data.mealType != null) {
       const meal = new MealInsertModel();
       meal.recipeId = this.data.recipeId;
@@ -46,11 +48,17 @@ export class AddMealComponent implements OnInit {
       meal.userId = this.currentUser.id;
 
       if (this.data.id == null){
-        this.mealService.addMeal(meal).subscribe(_ => this.dialogRef.close(this.data));
+        this.mealService.addMeal(meal).subscribe(_ => {
+          this.isSaving = false;
+          this.dialogRef.close(this.data);
+        });
       }
       else{
         meal.id = this.data.id;
-        this.mealService.updateMeal(meal).subscribe(_ => this.dialogRef.close(this.data));
+        this.mealService.updateMeal(meal).subscribe(_ => {
+          this.isSaving = false;
+          this.dialogRef.close(this.data);
+        });
       }
     }
   }
@@ -60,6 +68,10 @@ export class AddMealComponent implements OnInit {
   }
 
   onDeleteClick(): void {
-    this.mealService.deleteMeal(this.data.id).subscribe(_ => this.dialogRef.close(this.data));
+    this.isSaving = true;
+    this.mealService.deleteMeal(this.data.id).subscribe(_ => {
+      this.isSaving = false;
+      this.dialogRef.close(this.data);
+    });
   }
 }
