@@ -55,20 +55,20 @@ namespace RecipeMicroserviceAPI.Business.Services
 
             if (areUserRecipes)
             {
-                recipesQuery.Where(r => r.UserId == userId);
+                recipesQuery = recipesQuery.Where(r => r.UserId == userId);
             }
             else
             {
-                recipesQuery.Where(r => r.IsPublic == true);
+                recipesQuery = recipesQuery.Where(r => r.IsPublic == true);
             }
 
             if (skillLevelId.HasValue)
             {
-                recipesQuery.Where(r => r.SkillLevelId == skillLevelId);
+                recipesQuery = recipesQuery.Where(r => r.SkillLevelId == skillLevelId);
             }
             if (categoryId.HasValue)
             {
-                recipesQuery.Where(r => r.RecipeCategoryId == categoryId);
+                recipesQuery = recipesQuery.Where(r => r.RecipeCategoryId == categoryId);
             }
 
             var recipes = await recipesQuery
