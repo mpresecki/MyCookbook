@@ -109,8 +109,9 @@
     <mat-spinner class="spinner" color="accent"></mat-spinner>
   </div>
 
-  <button mat-button 
+  <button mat-raised-button 
     matTooltip="Saves recipe"
+    color="accent"
     [disabled]="!recipeForm.valid || !ingredientsForm.valid || !prepStepsForm.valid"
     (click)="save()">Save</button>
 

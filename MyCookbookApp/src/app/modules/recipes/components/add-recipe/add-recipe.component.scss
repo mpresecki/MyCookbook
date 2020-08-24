@@ -4,6 +4,10 @@
     width: 80%;
     margin: auto;
     padding: 4px 6px;
+    
+    & button {
+        margin: 5px;
+    }
 
     .search-result {
         margin: 0px;

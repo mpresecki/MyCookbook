@@ -96,6 +96,9 @@ namespace RecipeMicroserviceAPI.Business.Services
                 .Include(r => r.RecipeCategory)
                 .Include(r => r.SkillLevel)
                 .Include(r => r.RecipeIngredients)
+                    .ThenInclude(ri => ri.Ingredient)
+                .Include(r => r.RecipeIngredients)
+                    .ThenInclude(ri => ri.Unit)
                 .AsNoTracking()
                 .FirstOrDefaultAsync();
             recipe.PreparationSteps = recipe.PreparationSteps.OrderBy(p => p.StepNumber).ToList();

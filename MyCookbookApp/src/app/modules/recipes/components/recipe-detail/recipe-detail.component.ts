@@ -16,7 +16,9 @@ import { User } from 'src/app/shared/models/user';
 export class RecipeDetailComponent implements OnInit {
   recipe: RecipeModel = new RecipeModel();
   showEditRecipe = false;
+  adjustedServings: number;
   currentUser: User;
+  ingredients = [];
 
   constructor(
     private recipeService: RecipeService,
@@ -39,12 +41,30 @@ export class RecipeDetailComponent implements OnInit {
   getRecipe(){
     const id = +this.route.snapshot.paramMap.get('id');
     if (id){
-      this.recipeService.getRecipe(id).subscribe(data => this.recipe = data);
+      this.recipeService.getRecipe(id).subscribe(data => {
+        this.recipe = data;
+        this.adjustedServings = this.recipe.servings;
+        this.recipe.recipeIngredients.forEach(val => this.ingredients.push(Object.assign({}, val)));
+      });
     }
   }
 
   deleteRecipe(){
     this.recipeService.deleteRecipe(this.recipe.id).subscribe(_ => this.location.back());
+  }
+
+  adjustServings(){
+    // tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < this.ingredients.length; i++) {
+      const ingredient = this.ingredients[i];
+      ingredient.quantity = (this.adjustedServings / this.recipe.servings)
+        * this.recipe.recipeIngredients[i].quantity;
+    }
+  }
+
+  resetServings(){
+    this.adjustedServings = this.recipe.servings;
+    this.adjustServings();
   }
 
   openDialog(recipe: Recipe): void {
