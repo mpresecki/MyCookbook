@@ -40,6 +40,7 @@ namespace UserMicroservice.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task AddUserAsync(UserInsertModel user)
         {
             await _service.InsertUser(user);

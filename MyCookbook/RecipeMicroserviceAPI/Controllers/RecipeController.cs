@@ -34,7 +34,10 @@ namespace RecipeMicroserviceAPI.Controllers
         [Route("{recipeId:long}")]
         public async Task<RecipeModel> GetRecipeByIdAsync(long recipeId)
         {
-            return await _service.GetRecipeByIdAsync(recipeId);
+            var accessToken = Request.Headers[HeaderNames.Authorization].ToString();
+            var recipe = await _service.GetRecipeByIdAsync(recipeId, accessToken);
+
+            return recipe;
         }
 
         [HttpPost]

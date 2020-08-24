@@ -53,8 +53,6 @@ export class UnitConversionComponent implements OnInit {
   }
 
   convertTemperature(){
-    
-    console.log(this.conversionTemperature);
     this.unitService.convertTemperature(this.conversionTemperature).subscribe(data => {
       this.conversionTemperature.quantityTo = data.quantityTo;
     });

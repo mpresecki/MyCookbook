@@ -44,6 +44,10 @@
         </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button color="primary" matTooltip="Register" (click)="register()">Register</button>
+        <button mat-raised-button 
+            color="primary" 
+            matTooltip="Register" 
+            [disabled]="!user || !user.firstName || !user.lastName || !user.email || !user.password"
+            (click)="register()">Register</button>
     </mat-card-actions>
   </mat-card>

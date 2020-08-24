@@ -46,10 +46,16 @@ export class LoginComponent implements OnInit {
   }
 
   register(): void {
-    this.userService.addUser(this.user).subscribe(_ => {
-      this.email = this.user.email;
-      this.password = this.user.password;
-      this.login();
-    });
+    this.userService.addUser(this.user)
+    .subscribe(
+      _ => {
+        this.email = this.user.email;
+        this.password = this.user.password;
+        this.login();
+      },
+      error => {
+        this.error = error;
+      }
+    );
   }
 }

@@ -41,6 +41,7 @@ export class RecipeModel implements Recipe{
     categoryName: string;
     skillLevel: string;
     userId: number;
+    userName: string;
 
     preparationSteps: [{
         stepNumber: number;

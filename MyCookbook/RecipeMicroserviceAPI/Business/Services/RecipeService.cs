@@ -30,6 +30,8 @@ namespace RecipeMicroserviceAPI.Business.Services
 
         private readonly ICookbookService _cookbookService;
 
+        private readonly ICommunicationService _communicationService;
+
         public RecipeService(IMapper mapper, 
             IRepository<Recipe> repository,
             IRepository<PreparationStep> prepStepRepository,
@@ -37,7 +39,8 @@ namespace RecipeMicroserviceAPI.Business.Services
             IRepository<SkillLevel> skillsRepository,
             IRepository<Unit> unitsRepository,
             RecipeContext context,
-            ICookbookService cookbookService)
+            ICookbookService cookbookService,
+            ICommunicationService communicationService)
         {
             _mapper = mapper;
             _repository = repository;
@@ -47,6 +50,7 @@ namespace RecipeMicroserviceAPI.Business.Services
             _unitsRepository = unitsRepository;
             _context = context;
             _cookbookService = cookbookService;
+            _communicationService = communicationService;
         }
 
         public async Task<List<RecipeListModel>> GetAllRecipesAsync(long userId, long? skillLevelId, long? categoryId, bool areUserRecipes = false)
@@ -59,7 +63,7 @@ namespace RecipeMicroserviceAPI.Business.Services
             }
             else
             {
-                recipesQuery = recipesQuery.Where(r => r.IsPublic == true);
+                recipesQuery = recipesQuery.Where(r => r.IsPublic == true || r.UserId == userId);
             }
 
             if (skillLevelId.HasValue)
@@ -83,7 +87,7 @@ namespace RecipeMicroserviceAPI.Business.Services
             return recipes;
         }
 
-        public async Task<RecipeModel> GetRecipeByIdAsync(long id)
+        public async Task<RecipeModel> GetRecipeByIdAsync(long id, string accessToken)
         {
             var recipe = await _repository.GetAll()
                 .AsNoTracking()
@@ -93,10 +97,14 @@ namespace RecipeMicroserviceAPI.Business.Services
                 .Include(r => r.SkillLevel)
                 .Include(r => r.RecipeIngredients)
                 .AsNoTracking()
-                .ProjectTo<RecipeModel>(_mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync();
             recipe.PreparationSteps = recipe.PreparationSteps.OrderBy(p => p.StepNumber).ToList();
-            return recipe;
+
+            var recipeModel = _mapper.Map<RecipeModel>(recipe);
+            var user = await _communicationService.CheckUserAsync(recipe.UserId, accessToken);
+            recipeModel.UserName = user.FirstName;
+
+            return recipeModel;
         }
 
         public async Task InsertRecipeAsync(RecipeInsertModel recipe)

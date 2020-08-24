@@ -10,7 +10,7 @@ namespace RecipeMicroserviceAPI.Business.Services
     {
         Task<List<RecipeListModel>> GetAllRecipesAsync(long userId, long? skillLevelId, long? categoryId, bool areUserRecipes = false);
 
-        Task<RecipeModel> GetRecipeByIdAsync(long id);
+        Task<RecipeModel> GetRecipeByIdAsync(long id, string accessToken);
 
         Task InsertRecipeAsync(RecipeInsertModel recipe);
 

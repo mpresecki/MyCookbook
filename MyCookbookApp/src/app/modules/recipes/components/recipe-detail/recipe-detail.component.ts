@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { RecipeModel, Recipe } from 'src/app/shared/models/recipe';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMealComponent } from '../../dialogs/add-meal/add-meal.component';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -14,13 +16,17 @@ import { AddMealComponent } from '../../dialogs/add-meal/add-meal.component';
 export class RecipeDetailComponent implements OnInit {
   recipe: RecipeModel = new RecipeModel();
   showEditRecipe = false;
+  currentUser: User;
 
   constructor(
     private recipeService: RecipeService,
+    private authenticationService: AuthenticationService,
     private location: Location,
     private route: ActivatedRoute,
     public dialog: MatDialog
-  ) { }
+  ) {
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  }
 
   ngOnInit() {
     this.getRecipe();
