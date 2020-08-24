@@ -10,6 +10,7 @@ import { AddRecipeComponent } from './components/add-recipe/add-recipe.component
 import { CookbookComponent } from './pages/cookbook/cookbook.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MyRecipesComponent } from './pages/my-recipes/my-recipes.component';
+import { IngredientsComponent } from './pages/ingredients/ingredients.component';
 import { AddMealComponent } from './dialogs/add-meal/add-meal.component';
 import { UnitConversionComponent } from './components/unit-conversion/unit-conversion.component';
 
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'my', component: MyRecipesComponent },
   { path: 'detail/:id', component: RecipeDetailComponent},
-  { path: 'cookbook', component: CookbookComponent}
+  { path: 'cookbook', component: CookbookComponent},
+  { path: 'ingredients', component: IngredientsComponent}
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const routes: Routes = [
     DashboardComponent,
     AddMealComponent,
     UnitConversionComponent,
-    MyRecipesComponent
+    MyRecipesComponent,
+    IngredientsComponent
   ]
 })
 export class RecipesModule { }

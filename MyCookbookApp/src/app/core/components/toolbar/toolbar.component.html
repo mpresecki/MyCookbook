@@ -6,6 +6,10 @@
     [routerLink]="link.path"
     (click)="activeLink = link.path"
     [active]="activeLink == link.path"> {{link.label}} </a>
+    <a mat-tab-link routerLink="recipes/ingredients" 
+      *ngIf="currentUser && currentUser.email === 'admin@mycookbook.com'"
+      (click)="activeLink = 'recipes/ingredients'"
+      [active]="activeLink == 'recipes/ingredients'"> Ingredients </a>
   </nav>
   
   <span class="spacer"></span>

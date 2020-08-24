@@ -11,7 +11,7 @@ namespace UserMicroserviceAPI.Business.Models
         public long Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Username { get; set; }
+        public string Email { get; set; }
         public string Token { get; set; }
 
         public AuthenticateResponse(User user, string token)
@@ -19,7 +19,7 @@ namespace UserMicroserviceAPI.Business.Models
             Id = user.Id;
             FirstName = user.FirstName;
             LastName = user.LastName;
-            Username = user.Email;
+            Email = user.Email;
             Token = token;
         }
     }

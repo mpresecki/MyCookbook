@@ -23,19 +23,22 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatRippleModule} from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
     CommonModule, FormsModule,
     MatTabsModule, MatGridListModule, MatButtonModule, MatTooltipModule, MatListModule, MatCardModule, MatDividerModule,
     MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatTableModule, MatToolbarModule, MatSelectModule, MatCheckboxModule,
-    MatMenuModule, MatIconModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatRippleModule, MatProgressSpinnerModule
+    MatMenuModule, MatIconModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatRippleModule, MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   exports: [
     CommonModule, FormsModule,
     MatTabsModule, MatGridListModule, MatButtonModule, MatTooltipModule, MatListModule, MatCardModule, MatDividerModule,
     MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatTableModule, MatToolbarModule, MatSelectModule, MatCheckboxModule,
-    MatMenuModule, MatIconModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatRippleModule, MatProgressSpinnerModule
+    MatMenuModule, MatIconModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatRippleModule, MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   declarations: []
 })

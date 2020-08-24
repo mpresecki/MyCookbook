@@ -23,7 +23,7 @@ namespace RecipeMicroserviceAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<List<IngredientModel>> GetIngredientsAsync([FromQuery]string name, [FromQuery]bool exactMatch)
+        public async Task<List<IngredientModel>> GetIngredientsAsync([FromQuery]string name = "", [FromQuery]bool exactMatch = false)
         {
             return await _service.GetAllIngredientsAsync(name, exactMatch);
         }

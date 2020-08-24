@@ -85,6 +85,41 @@ export class RecipeService {
     );
   }
 
+  /** GET: get ingredient */
+  getIngredients(): Observable<Ingredient[]> {
+    const url = `${this.baseUrl}/Ingredient`;
+    return this.http.get<Ingredient[]>(url).pipe(
+      tap(_ =>
+        console.log('fetched ingredients')),
+        catchError(this.handleError<Ingredient[]>('getIngredients', []))
+    );
+  }
+
+  /** POST: add a new ingredient to the server */
+  addIngredient(ingredient: Ingredient): Observable<Ingredient> {
+    return this.http.post<Ingredient>(this.baseUrl + '/Ingredient', ingredient, this.httpOptions).pipe(
+      tap(_ => console.log(`added ingredient`)),
+      catchError(this.handleError<Ingredient>('addIngredient'))
+    );
+  }
+
+  /** PUT: update ingredient */
+  updateIngredient(ingredient: Ingredient): Observable<Ingredient> {
+    return this.http.put<Ingredient>(this.baseUrl + '/Ingredient', ingredient, this.httpOptions).pipe(
+      tap(_ => console.log(`updated ingredient`)),
+      catchError(this.handleError<RecipeInsert>('updateIngredient'))
+    );
+  }
+
+  /** DELETE: delete ingredient */
+  deleteIngredient(ingredientId: number): Observable<any> {
+    const url = `${this.baseUrl}/Ingredient/${ingredientId}`;
+    return this.http.delete<number>(url).pipe(
+      tap(_ => console.log(`deleted ingredient`)),
+      catchError(this.handleError<RecipeInsert>('deleteIngredient'))
+    );
+  }
+
   /** GET: get recipe categories */
   getRecipeCategories(): Observable<RecipeCategory[]> {
     const url = this.baseUrl + '/Recipe/categories';
