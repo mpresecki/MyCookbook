@@ -16,10 +16,10 @@
       <mat-icon>account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item click="/recipes/my">
+      <button mat-menu-item routerLink="/recipes/my">
         <span>My recipes</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/userprofile">
         <span>User profile</span>
       </button>
       <button mat-menu-item (click)="logout()">

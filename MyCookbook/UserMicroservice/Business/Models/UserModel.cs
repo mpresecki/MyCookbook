@@ -9,7 +9,6 @@ namespace UserMicroserviceAPI.Business.Models
 {
     public class UserListModel
     {
-        [JsonIgnore]
         public long Id { get; set; }
 
         [Required]

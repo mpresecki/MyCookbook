@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { User, UserRegistration } from 'src/app/shared/models/user';
+import { User, UserRegistration, UserUpdate } from 'src/app/shared/models/user';
 import { environment } from 'src/environments/environment';
 import { tap, catchError } from 'rxjs/operators';
 
@@ -20,11 +20,23 @@ export class UserService {
     return this.http.get<User[]>(this.url);
   }
 
+  getUser(id: number): Observable<UserUpdate>{
+    return this.http.get<UserUpdate>(this.url + '/' + id);
+  }
+
   /** POST: add a new user to the server */
   addUser(user: UserRegistration): Observable<UserRegistration> {
     return this.http.post<UserRegistration>(this.url, user, this.httpOptions).pipe(
       tap(_ => console.log(`added user`)),
       catchError(this.handleError<UserRegistration>('addUser'))
+    );
+  }
+
+  /** PUT: update user */
+  updateUser(user: UserUpdate): Observable<UserUpdate> {
+    return this.http.put<UserUpdate>(this.url, user, this.httpOptions).pipe(
+      tap(_ => console.log(`updated user`)),
+      catchError(this.handleError<UserUpdate>('updateUser'))
     );
   }
 

@@ -1,0 +1,14 @@
+<link href= 
+  "https://fonts.googleapis.com/icon?family=Material+Icons&display=block" 
+        rel="stylesheet"> 
+  
+<h2>My recipes</h2>
+<button mat-raised-button (click)="addRecipe()">
+  Add new recipe
+</button>
+<app-add-recipe 
+  *ngIf="showAddRecipe"
+  (showEditor)="showAddRecipe=$event">
+</app-add-recipe>
+
+<app-recipe-list [recipes]="recipes"></app-recipe-list>

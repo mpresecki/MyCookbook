@@ -9,13 +9,14 @@ import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
 import { CookbookComponent } from './pages/cookbook/cookbook.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { MyRecipesComponent } from './pages/my-recipes/my-recipes.component';
 import { AddMealComponent } from './dialogs/add-meal/add-meal.component';
 import { UnitConversionComponent } from './components/unit-conversion/unit-conversion.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
   { path: '', component: DashboardComponent },
-  { path: 'my', component: RecipeListComponent },
+  { path: 'my', component: MyRecipesComponent },
   { path: 'detail/:id', component: RecipeDetailComponent},
   { path: 'cookbook', component: CookbookComponent}
 ];
@@ -34,7 +35,8 @@ const routes: Routes = [
     CookbookComponent,
     DashboardComponent,
     AddMealComponent,
-    UnitConversionComponent
+    UnitConversionComponent,
+    MyRecipesComponent
   ]
 })
 export class RecipesModule { }

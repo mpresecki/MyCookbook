@@ -28,8 +28,8 @@ export class RecipeService {
       this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
 
-  getRecipes(): Observable<Recipe[]> {
-    const url = this.baseUrl + '/Recipe?userId=' + this.currentUser.id;
+  getRecipes(areUserRecipes = false): Observable<Recipe[]> {
+    const url = this.baseUrl + '/Recipe?userId=' + this.currentUser.id + '&areUserRecipes=' + areUserRecipes;
     return this.http.get<Recipe[]>(url).pipe(
       tap(_ =>
         console.log('fetched recipes')),

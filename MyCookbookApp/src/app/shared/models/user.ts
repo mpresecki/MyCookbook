@@ -14,3 +14,11 @@ export class UserRegistration {
     lastName: string;
     address: string;
 }
+
+export class UserUpdate {
+    id: number;
+    email: string;
+    firstName: string;
+    lastName: string;
+    address: string;
+}
