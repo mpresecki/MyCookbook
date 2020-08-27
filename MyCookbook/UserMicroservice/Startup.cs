@@ -76,6 +76,7 @@ namespace UserMicroservice
                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<UserContext>();
 
+            services.AddScoped<IDatabaseScope, DatabaseScope>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IUserService, UserService>();
             services.AddControllers();

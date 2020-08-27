@@ -7,7 +7,10 @@ namespace UserMicroserviceAPI.Data
 {
     public static class Constants
     {
-        public static readonly int ROLE_ADMIN = 1;
-        public static readonly int ROLE_USER = 2;
+        public static long ROLE_ADMIN = 1;
+        public static long ROLE_USER = 2;
+
+        public static readonly String ROLE_ADMIN_NAME = "admin";
+        public static readonly String ROLE_USER_NAME = "user";
     }
 }
