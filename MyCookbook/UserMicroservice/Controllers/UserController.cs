@@ -8,8 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using UserMicroserviceAPI.Business.Models;
 using UserMicroserviceAPI.Business.Services;
-using UserMicroserviceAPI.Data.Entities;
-using UserMicroserviceAPI.Helpers;
 
 namespace UserMicroservice.Controllers
 {
