@@ -4,7 +4,10 @@ MyCookbook je web aplikacija za spremanje recepata i planiranja obroka koja se t
 
 Live web aplikacija je dostupna na adresi: http://my-cookbook.azurewebsites.net
 
-Instalacija projekta na lokalno računalo:
+*\*koristi se besplatan Azure plan pa je moguća nedostupnost aplikacije zbog prekoračenja dnevnih limita*
+
+
+## Instalacija projekta na lokalno računalo:
 
 //ASP.Net Core projekt
 1. otvoriti MyCookbookAPI projekt u Visual Studiu i napraviti build
