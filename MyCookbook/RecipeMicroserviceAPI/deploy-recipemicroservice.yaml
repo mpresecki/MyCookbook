@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipemicroservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: recipemicroservice
+  template:
+    metadata:
+      labels:
+        app: recipemicroservice
+    spec:
+      containers:
+      - name: recipemicroservice
+        image: mpresecki/recipemicroserviceapi:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_URLS
+          value: http://*:80
+        - name: DB_PW
+          value: User1234
+        - name: AppSettings__UserAPI
+          value: http://51.105.205.60/api/User
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: recipemicroservice
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: recipemicroservice

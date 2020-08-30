@@ -72,8 +72,20 @@ namespace UserMicroservice
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
+            var envs = Configuration.AsEnumerable();
+            foreach (var item in envs)
+            {
+                Console.WriteLine(item.Key + "=" + item.Value);
+            }
+
+            var config = new StringBuilder
+                (Configuration["ConnectionStrings:DefaultConnection"]);
+            string conn = config.Replace("ENVID", Configuration["DB_UserId"])
+                                .Replace("ENVPW", Configuration["DB_PW"])
+                                .ToString();
+            
             services.AddDbContext<UserContext>(opt =>
-               opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+               opt.UseSqlServer(conn));
             services.AddScoped<UserContext>();
 
             services.AddScoped<IDatabaseScope, DatabaseScope>();
@@ -129,8 +141,6 @@ namespace UserMicroservice
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
-            app.UseHttpsRedirection();
-
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
@@ -142,7 +152,7 @@ namespace UserMicroservice
 
             // global cors policy
             app.UseCors(x => x
-                .WithOrigins("http://localhost:4200")
+                .WithOrigins("*")
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 

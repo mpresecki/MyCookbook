@@ -132,12 +132,14 @@ export class AddRecipeComponent implements OnInit {
       console.log(this.recipe);
       this.recipeService.updateRecipe(this.recipe).subscribe(_ => {
         this.isSaving = false;
-        console.log(_);
+        this.showEditor.emit(false);
+        location.reload();
       });
     }
     else {
       this.recipeService.addRecipe(this.recipe).subscribe(_ => {
         this.isSaving = false;
+        this.showEditor.emit(false);
         location.reload();
       });
     }

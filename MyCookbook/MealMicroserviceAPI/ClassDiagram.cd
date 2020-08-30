@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MealMicroserviceAPI.Business.MappingProfiles">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\MappingProfiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Business.Models.MealModel">
+    <Position X="2.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Business\Models\MealModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MealType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Business.Models.MealsByDayModel">
+    <Position X="2.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\MealModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Meals" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Business.Models.MealInsertModel">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAgAAgAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Business\Models\MealModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Business.Models.MealUpdateModel">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\MealModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Business.Models.RecipeModel">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAACAIAAAAAAAAQAACAAAAAAAQCAAAAAAAA=</HashCode>
+      <FileName>Business\Models\RecipeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Business.Services.MealService" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAABAAAAAAEABAAAAAQAAQAAAAAIAQAAAAAA=</HashCode>
+      <FileName>Business\Services\MealService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_repository" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MealMicroserviceAPI.Controllers.MealController">
+    <Position X="10.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAAAAAAAACAAAQAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Controllers\MealController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_service" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Data.MealContext">
+    <Position X="5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\MealContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Data.Entities.BaseEntity">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Entities\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Data.Entities.Meal">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAgAAgAAAAQAAAAACAAAAAA=</HashCode>
+      <FileName>Data\Entities\Meal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MealMicroserviceAPI.Data.Repositories.DatabaseScope" BaseTypeListCollapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\DatabaseScope.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MealMicroserviceAPI.Data.Repositories.Repository&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAACAAAAAAAAAAAAAAAAAAAAQgAAgAAAAAAIIA=</HashCode>
+      <FileName>Data\Repositories\Repository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="MealMicroserviceAPI.Business.Services.IMealService">
+    <Position X="7.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Business\Services\IMealService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MealMicroserviceAPI.Data.Repositories.IDatabaseScope">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IDatabaseScope.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MealMicroserviceAPI.Data.Repositories.IRepository&lt;T&gt;">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAAIIA=</HashCode>
+      <FileName>Data\Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MealMicroserviceAPI.Data.Enums.MealTypes">
+    <Position X="2.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Data\Enums\MealType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

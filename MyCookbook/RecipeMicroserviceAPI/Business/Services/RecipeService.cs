@@ -119,13 +119,22 @@ namespace RecipeMicroserviceAPI.Business.Services
         public async Task UpdateRecipeAsync(RecipeInsertModel recipe)
         {
             var recipeEntity = await _repository.GetAll()
+                .AsNoTracking()
                 .Where(r => r.Id == recipe.Id)
                 .Include(r => r.RecipeIngredients)
                 .Include(r => r.PreparationSteps)
                 .FirstOrDefaultAsync();
+
+            recipeEntity.SkillLevelId = recipe.SkillLevelId;
+            recipeEntity.Servings = recipe.Servings;
+            recipeEntity.RecipeCategoryId = recipe.RecipeCategoryId;
+            recipeEntity.CookingTime = recipe.CookingTime;
+
             await UpdateRecipeIngredients(recipe, recipeEntity);
             await UpdatePreparationSteps(recipe, recipeEntity);
-            await _repository.UpdateAsync(recipeEntity);
+
+            _context.Update(recipeEntity);
+            await _context.SaveChangesAsync();
         }
         
 
@@ -181,17 +190,11 @@ namespace RecipeMicroserviceAPI.Business.Services
 
             foreach (var item in ingredientUpdateList)
             {
-                var recipeIngredient = new RecipeIngredient
-                {
-                    IngredientId = item.IngredientId,
-                    RecipeId = recipe.Id,
-                    UnitId = item.UnitId,
-                    Quantity = item.Quantity
-                };
-                _context.Update(recipeIngredient);
+                var recipeIngredient = dbIngredients.FirstOrDefault(i => i.IngredientId == item.IngredientId);
+                recipeIngredient.UnitId = item.UnitId;
+                recipeIngredient.Quantity = item.Quantity;
+
                 await _context.SaveChangesAsync();
-                _context.Entry(recipeIngredient).State = EntityState.Detached;
-                recipeEntity.RecipeIngredients.Add(recipeIngredient);
             }
 
             foreach (var item in ingredientRemoveList)
@@ -212,7 +215,11 @@ namespace RecipeMicroserviceAPI.Business.Services
                 };
                 _context.Add(recipeIngredient);
                 await _context.SaveChangesAsync();
-                recipeEntity.RecipeIngredients.Add(recipeIngredient);
+            }
+
+            foreach (var ingr in recipeEntity.RecipeIngredients)
+            {
+                _context.Entry(ingr).State = EntityState.Detached;
             }
         }
 

@@ -7,7 +7,6 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
-    private url = 'https://localhost:44338/api/Student';
 
     constructor(private authenticationService: AuthenticationService) { }
 
@@ -21,7 +20,15 @@ export class JwtInterceptor implements HttpInterceptor {
         if (isLoggedIn && isApiUrl) {
             request = request.clone({
                 setHeaders: {
-                    Authorization: `Bearer ${currentUser.token}`
+                    Authorization: `Bearer ${currentUser.token}`,
+                    'Access-Control-Allow-Origin': '*'
+                }
+            });
+        }
+        if (!isLoggedIn && isApiUrl) {
+            request = request.clone({
+                setHeaders: {
+                    'Access-Control-Allow-Origin': '*'
                 }
             });
         }

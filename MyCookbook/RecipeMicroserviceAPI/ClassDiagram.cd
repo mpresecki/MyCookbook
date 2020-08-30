@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="RecipeMicroserviceAPI.Controllers.CookbookController">
+    <Position X="7.25" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAQAAgAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Controllers\CookbookController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_service" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Controllers.IngredientController">
+    <Position X="9.25" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAABAAAAAAZAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\IngredientController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_service" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Controllers.RecipeController">
+    <Position X="11.25" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgABAAIACAAAEQAAAAAQAAAAAAAAAAAAAACIAAIAA=</HashCode>
+      <FileName>Controllers\RecipeController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_service" />
+      <Field Name="_communicationService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.DataSeeder">
+    <Position X="22.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAACAAAwAAAACAAIAAgAAAgAAAQAA=</HashCode>
+      <FileName>Data\DataSeeder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.RecipeContext">
+    <Position X="16.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAABAAAAAAICAAEAAAAAAAkIAAAAAEAAA=</HashCode>
+      <FileName>Data\RecipeContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.BaseEntity">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Entities\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.Ingredient">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Data\Entities\Ingredient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.MyCookbook">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <AssociationLine Name="Recipe" Type="RecipeMicroserviceAPI.Data.Entities.Recipe" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="3.438" />
+        <Point X="7.625" Y="3.438" />
+        <Point X="7.625" Y="4.688" />
+        <Point X="14.75" Y="4.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAgAAAAAAAAAAAAACIAAAAA=</HashCode>
+      <FileName>Data\Entities\MyCookbook.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Recipe" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.PreparationStep">
+    <Position X="10.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Data\Entities\PreparationStep.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Recipe" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.Recipe">
+    <Position X="14.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIAAAAAAAICAIAAAAAAAAwAACAACAQAgAAAEAAAAAA=</HashCode>
+      <FileName>Data\Entities\Recipe.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SkillLevel" />
+      <Property Name="RecipeCategory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.RecipeCategory">
+    <Position X="17" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Entities\RecipeCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.RecipeIngredient">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABABgAAAAAAAAIAAAAAAAAAAAAAAAAAAEiAAAAAA=</HashCode>
+      <FileName>Data\Entities\RecipeIngredient.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Ingredient" />
+      <Property Name="Recipe" />
+      <Property Name="Unit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.SkillLevel">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Data\Entities\SkillLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Entities.Unit">
+    <Position X="8" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAABIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Entities\Unit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UnitType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Repositories.DatabaseScope" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\DatabaseScope.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Data.Repositories.Repository&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="14" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAACAAAAAAAAAAAAAAAAAAAAQgAAgAAAAAAIIA=</HashCode>
+      <FileName>Data\Repositories\Repository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="context" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.MappingProfiles">
+    <Position X="5.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\MappingProfiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.CookbookModel">
+    <Position X="1.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAIAAAAA=</HashCode>
+      <FileName>Business\Models\CookbookModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Recipe" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.CookbookInsertModel">
+    <Position X="13" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACIAAAAA=</HashCode>
+      <FileName>Business\Models\CookbookModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.IngredientModel">
+    <Position X="8" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\IngredientModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.IngredientInsertModel">
+    <Position X="8" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\IngredientModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.PreparationStepModel">
+    <Position X="8.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\PreparationStepModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.RecipeCategoryModel">
+    <Position X="10.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\RecipeCategoryModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.RecipeIngredientModel">
+    <Position X="1" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Business\Models\RecipeIngredientModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.RecipeIngredientInsertModel">
+    <Position X="10.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAA=</HashCode>
+      <FileName>Business\Models\RecipeIngredientModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.RecipeBaseModel">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAACAAAAAAAAAAQAACAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Business\Models\RecipeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.RecipeListModel">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAACAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\RecipeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.RecipeModel">
+    <Position X="3.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\RecipeModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="PreparationSteps" />
+      <Property Name="RecipeIngredients" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.RecipeInsertModel">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAgAAAEAAAAAA=</HashCode>
+      <FileName>Business\Models\RecipeModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RecipeIngredients" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.SkillLevelModel">
+    <Position X="18" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\SkillLevelModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.UnitModel">
+    <Position X="18" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAABAAAAAAAAAAABIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\UnitModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.UserModel">
+    <Position X="15.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAACAAAAAAEAAAAAAAAAAAAAACAAAAAAAAAAg=</HashCode>
+      <FileName>Business\Models\UserModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Role" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Models.UserRoleModel">
+    <Position X="13" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Models\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Services.CommunicationService" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Business\Services\CommunicationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Services.CookbookService" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAABAAAAAAAgBAEAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Business\Services\CookbookService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_repository" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Services.IngredientService" BaseTypeListCollapsed="true">
+    <Position X="14" Y="18" Width="1.5" />
+    <AssociationLine Name="_repository" Type="RecipeMicroserviceAPI.Data.Repositories.IRepository&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="19.5" />
+        <Point X="12" Y="19.5" />
+        <Point X="12" Y="17.123" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABAABABAAAAAAAAlAAAAAAAIAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Services\IngredientService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_repository" />
+      <Field Name="_databaseScope" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RecipeMicroserviceAPI.Business.Services.RecipeService" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="15.5" Width="1.5" />
+    <AssociationLine Name="_communicationService" Type="RecipeMicroserviceAPI.Business.Services.ICommunicationService" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.25" Y="16.062" />
+        <Point X="7.875" Y="16.062" />
+        <Point X="7.875" Y="16.052" />
+        <Point X="4" Y="16.052" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_cookbookService" Type="RecipeMicroserviceAPI.Business.Services.ICookbookService" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.25" Y="18.25" />
+        <Point X="6.5" Y="18.25" />
+        <Point X="6.5" Y="19.18" />
+        <Point X="5.656" Y="19.18" />
+        <Point X="5.656" Y="18.93" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAKAAAEAAADABAAAAQABBwAAAABAAAAAAAAACoAEMCA=</HashCode>
+      <FileName>Business\Services\RecipeService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_communicationService" />
+      <Field Name="_context" />
+      <Field Name="_cookbookService" />
+      <Field Name="_skillsRepository" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="RecipeMicroserviceAPI.Data.Repositories.IDatabaseScope">
+    <Position X="19.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IDatabaseScope.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RecipeMicroserviceAPI.Data.Repositories.IRepository&lt;T&gt;">
+    <Position X="11.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAAIIA=</HashCode>
+      <FileName>Data\Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RecipeMicroserviceAPI.Business.Services.ICommunicationService">
+    <Position X="2.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Services\ICommunicationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RecipeMicroserviceAPI.Business.Services.ICookbookService">
+    <Position X="4.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAgAAEAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Business\Services\ICookbookService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RecipeMicroserviceAPI.Business.Services.IIngredientService">
+    <Position X="9.25" Y="23.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAABAAAAAAAAAAEAAAAAAAIAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Services\IIngredientService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RecipeMicroserviceAPI.Business.Services.IRecipeService">
+    <Position X="11.5" Y="23.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAEAAACAAAAAAAAABgAAAABAAAAAAAAACAAAIAA=</HashCode>
+      <FileName>Business\Services\IRecipeService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="RecipeMicroserviceAPI.Data.Entities.UnitType">
+    <Position X="20.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgACAAAA=</HashCode>
+      <FileName>Data\Entities\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RecipeMicroserviceAPI.Data.Enums.RecipeCategoryTypes">
+    <Position X="22.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAACAAAAgAAAAAAAACABAgAEAAAA=</HashCode>
+      <FileName>Data\Enums\RecipeCategoryTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RecipeMicroserviceAPI.Data.Enums.SkillTypes">
+    <Position X="20.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAA=</HashCode>
+      <FileName>Data\Enums\SkillTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RecipeMicroserviceAPI.Data.Enums.UnitTypes">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABACAAAQAAQBAAAAAAABAAAAAACAAAgAAABISEAQAA=</HashCode>
+      <FileName>Data\Enums\UnitTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

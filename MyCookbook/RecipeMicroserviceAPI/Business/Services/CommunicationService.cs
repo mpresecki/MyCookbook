@@ -4,7 +4,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using RecipeMicroserviceAPI.Business.Models;
+using RecipeMicroserviceAPI.Helpers;
 
 namespace RecipeMicroserviceAPI.Business.Services
 {
@@ -12,14 +14,23 @@ namespace RecipeMicroserviceAPI.Business.Services
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        public CommunicationService(IHttpClientFactory clientFactory)
+        private readonly IConfiguration _configuration;
+
+        private readonly AppSettings _appSettings;
+
+        public CommunicationService(IHttpClientFactory clientFactory, IConfiguration configuration)
         {
             _clientFactory = clientFactory;
+            _configuration = configuration;
+
+            // konfigurira app postavke
+            _appSettings = new AppSettings();
+            _configuration.GetSection("AppSettings").Bind(_appSettings);
         }
 
         public async Task<UserModel> CheckUserAsync(long userId, string accessToken)
         {
-            var uri = "http://localhost:57844/api/User/" + userId;
+            var uri = _appSettings.UserAPI + "/" + userId;
             var request = new HttpRequestMessage(HttpMethod.Get, uri);
             request.Headers.Add("Accept", "application/json");
             request.Headers.Add("User-Agent", "Request-User");

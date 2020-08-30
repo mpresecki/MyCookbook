@@ -57,14 +57,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="UserMicroserviceAPI.Business.Models.AuthenticateRequest">
-    <Position X="15.75" Y="0.75" Width="1.5" />
+    <Position X="4" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Business\Models\AuthenticateRequest.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UserMicroserviceAPI.Business.Models.AuthenticateResponse">
-    <Position X="18.25" Y="0.75" Width="1.5" />
+    <Position X="6.5" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAg=</HashCode>
       <FileName>Business\Models\AuthenticateResponse.cs</FileName>
@@ -102,14 +102,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UserMicroserviceAPI.Business.MappingProfiles">
-    <Position X="15.75" Y="4.25" Width="1.5" />
+    <Position X="4" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\MappingProfiles.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UserMicroservice.Controllers.UserController">
-    <Position X="20.25" Y="6" Width="1.5" />
+    <Position X="9.25" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAQAQAAAAAAIAAAABAAAAAAAAAAQABAA=</HashCode>
       <FileName>Controllers\UserController.cs</FileName>
@@ -126,7 +126,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="UserMicroserviceAPI.Business.Services.IUserService">
-    <Position X="15.75" Y="6" Width="3.5" />
+    <Position X="11.75" Y="10" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAEAAAAAAMAAQAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Business\Services\IUserService.cs</FileName>

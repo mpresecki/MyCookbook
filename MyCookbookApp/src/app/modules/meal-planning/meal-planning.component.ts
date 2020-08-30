@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DatePipe, KeyValuePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 import { MealService } from 'src/app/core/services/meal.service';
-import { Meal, MealsByDay } from 'src/app/shared/models/meal';
+import { Meal, MealsByDay, MealTypes } from 'src/app/shared/models/meal';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMealComponent } from '../recipes/dialogs/add-meal/add-meal.component';
 
@@ -13,6 +13,7 @@ import { AddMealComponent } from '../recipes/dialogs/add-meal/add-meal.component
 })
 export class MealPlanningComponent implements OnInit {
   meals: MealsByDay[];
+  mealTypes = MealTypes;
   numOfDays = 14;
   days: Date[] = [];
   currentDate = new Date();
@@ -60,6 +61,10 @@ export class MealPlanningComponent implements OnInit {
       }
       this.meals.sort((a, b) => a.day.getTime() - b.day.getTime());
     });
+  }
+
+  getMealName(type: number){
+    return this.mealTypes.find(m => m.value === type).name;
   }
 
   openDialog(meal: Meal): void {

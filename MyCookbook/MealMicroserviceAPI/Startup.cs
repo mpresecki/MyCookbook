@@ -71,8 +71,14 @@ namespace MealMicroserviceAPI
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
+            var config = new StringBuilder
+                (Configuration["ConnectionStrings:DefaultConnection"]);
+            string conn = config.Replace("ENVID", Configuration["DB_UserId"])
+                                .Replace("ENVPW", Configuration["DB_PW"])
+                                .ToString();
+
             services.AddDbContext<MealContext>(opt =>
-               opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+               opt.UseSqlServer(conn));
             services.AddScoped<MealContext>();
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

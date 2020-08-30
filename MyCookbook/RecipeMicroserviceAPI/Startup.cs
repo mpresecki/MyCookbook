@@ -72,8 +72,15 @@ namespace RecipeMicroserviceAPI
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddDbContext<RecipeContext>(opt =>
-               opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            var config = new StringBuilder
+                (Configuration["ConnectionStrings:DefaultConnection"]);
+            string conn = config.Replace("ENVID", Configuration["DB_UserId"])
+                                .Replace("ENVPW", Configuration["DB_PW"])
+                                .ToString();
+
+            services.AddDbContext<RecipeContext>(opt => {
+                opt.UseSqlServer(conn);
+            });
             services.AddScoped<RecipeContext>();
 
             services.AddScoped<IDatabaseScope, DatabaseScope>();
@@ -135,8 +142,6 @@ namespace RecipeMicroserviceAPI
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
-
-            app.UseHttpsRedirection();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.

@@ -9,7 +9,10 @@ using AutoMapper.QueryableExtensions;
 using MealMicroserviceAPI.Business.Models;
 using MealMicroserviceAPI.Data.Entities;
 using MealMicroserviceAPI.Data.Repositories;
+using MealMicroserviceAPI.Helpers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MealMicroserviceAPI.Business.Services
 {
@@ -21,11 +24,21 @@ namespace MealMicroserviceAPI.Business.Services
 
         private readonly IHttpClientFactory _clientFactory;
 
-        public MealService(IRepository<Meal> repository, IMapper mapper, IHttpClientFactory factory)
+        private readonly IConfiguration _configuration;
+
+        private readonly AppSettings _appSettings;
+
+        public MealService(IRepository<Meal> repository, IMapper mapper, IHttpClientFactory factory,
+            IConfiguration configuration)
         {
             _repository = repository;
             _mapper = mapper;
             _clientFactory = factory;
+            _configuration = configuration;
+
+            // konfigurira app postavke
+            _appSettings = new AppSettings();
+            _configuration.GetSection("AppSettings").Bind(_appSettings);
         }
 
         public async Task<List<MealsByDayModel>> GetMealsByUserAsync(long userId, string accessToken)
@@ -85,7 +98,7 @@ namespace MealMicroserviceAPI.Business.Services
 
         private async Task<string> GetRecipeNameAsync(long id, string accessToken)
         {
-            var uri = "http://localhost:57397/api/Recipe/" + id;
+            var uri = _appSettings.RecipeAPI + "/" + id;
             var request = new HttpRequestMessage(HttpMethod.Get, uri);
             request.Headers.Add("Accept", "application/json");
             request.Headers.Add("User-Agent", "Request-Recipe");

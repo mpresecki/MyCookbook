@@ -8,5 +8,7 @@ namespace RecipeMicroserviceAPI.Helpers
     public class AppSettings
     {
         public string Secret { get; set; }
+
+        public string UserAPI { get; set; }
     }
 }
