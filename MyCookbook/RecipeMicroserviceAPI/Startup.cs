@@ -154,9 +154,11 @@ namespace RecipeMicroserviceAPI
 
             // global cors policy
             app.UseCors(x => x
-                .WithOrigins("http://localhost:4200")
+                .WithOrigins("*")
                 .AllowAnyMethod()
                 .AllowAnyHeader());
+
+            app.UseCorsMiddleware();
 
             app.UseAuthentication();
             app.UseAuthorization();

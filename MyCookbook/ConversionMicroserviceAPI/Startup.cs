@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ConversionMicroserviceAPI.Business.Services;
+using ConversionMicroserviceAPI.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -69,9 +70,11 @@ namespace ConversionMicroserviceAPI
 
             // global cors policy
             app.UseCors(x => x
-                .WithOrigins("http://localhost:4200")
+                .WithOrigins("*")
                 .AllowAnyMethod()
                 .AllowAnyHeader());
+
+            app.UseCorsMiddleware();
 
             app.UseAuthorization();
 
