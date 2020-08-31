@@ -24,7 +24,7 @@ spec:
         - name: DB_PW
           value: User1234
         - name: AppSettings__UserAPI
-          value: http://51.124.135.38/api/User
+          value: http://usermicroservice/api/User
 ---
 apiVersion: v1
 kind: Service

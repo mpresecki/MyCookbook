@@ -1,21 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="ConversionMicroserviceAPI.Business.Constants">
-    <Position X="1" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AACAAEBAAAAAQBAAAAAIAAEAAAAAEAAgAAAQABAACAA=</HashCode>
-      <FileName>Business\Constants.cs</FileName>
-    </TypeIdentifier>
-  </Class>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="ConversionMicroserviceAPI.Business.Converters.ToGramConverter">
-    <Position X="13.75" Y="1.5" Width="1.5" />
+    <Position X="7.25" Y="1" Width="1.5" />
     <AssociationLine Name="toGramConverters" Type="ConversionMicroserviceAPI.Business.Converters.ToGramConverter" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="14.282" Y="1.5" />
-        <Point X="14.282" Y="1.125" />
-        <Point X="15.625" Y="1.125" />
-        <Point X="15.625" Y="2.75" />
-        <Point X="15.25" Y="2.75" />
+        <Point X="7.782" Y="1" />
+        <Point X="7.782" Y="0.625" />
+        <Point X="9.125" Y="0.625" />
+        <Point X="9.125" Y="2.25" />
+        <Point X="8.75" Y="2.25" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -28,42 +21,35 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Converters.KilogramToGramConverter">
-    <Position X="17.25" Y="5.5" Width="1.5" />
+    <Position X="8.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Converters\Mass\ToGramConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Converters.DecagramToGramConverter">
-    <Position X="10.5" Y="5.5" Width="1.5" />
+    <Position X="7" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Converters\Mass\ToGramConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Converters.MilligramToGramConverter">
-    <Position X="12.75" Y="5.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Business\Converters\Mass\ToGramConverter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConversionMicroserviceAPI.Business.Converters.PoundToGramConverter">
-    <Position X="15" Y="5.5" Width="1.5" />
+    <Position X="9.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Converters\Mass\ToGramConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Converters.ToLiterConverter">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Position X="1.75" Y="0.75" Width="1.5" />
     <AssociationLine Name="toLiterConverters" Type="ConversionMicroserviceAPI.Business.Converters.ToLiterConverter" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.782" Y="0.5" />
-        <Point X="5.782" Y="0.125" />
-        <Point X="7.125" Y="0.125" />
-        <Point X="7.125" Y="1.562" />
-        <Point X="6.75" Y="1.562" />
+        <Point X="2.282" Y="0.75" />
+        <Point X="2.282" Y="0.375" />
+        <Point X="3.625" Y="0.375" />
+        <Point X="3.625" Y="1.812" />
+        <Point X="3.25" Y="1.812" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -75,127 +61,102 @@
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ConversionMicroserviceAPI.Business.Converters.MilliliterToLiterConverter">
-    <Position X="1" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Business\Converters\Volume\ToLiterConverter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Converters.DeciliterToLiterConverter">
-    <Position X="5.25" Y="4" Width="1.5" />
+    <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Converters\Volume\ToLiterConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Converters.TeaspoonToLiterConverter">
-    <Position X="9.75" Y="1.75" Width="1.5" />
+    <Position X="4.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Converters\Volume\ToLiterConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Converters.TablespoonToLiterConverter">
-    <Position X="7.75" Y="4" Width="1.5" />
+    <Position X="2.75" Y="3.75" Width="1.5" />
     <InheritanceLine Type="ConversionMicroserviceAPI.Business.Converters.ToLiterConverter" FixedFromPoint="true">
       <Path>
-        <Point X="6.5" Y="2.632" />
-        <Point X="6.5" Y="3.625" />
-        <Point X="8.5" Y="3.625" />
-        <Point X="8.5" Y="4" />
+        <Point X="3" Y="2.882" />
+        <Point X="3" Y="3.375" />
+        <Point X="3.5" Y="3.375" />
+        <Point X="3.5" Y="3.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Converters\Volume\ToLiterConverter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConversionMicroserviceAPI.Business.Converters.CupToLiterConverter">
-    <Position X="2.75" Y="4" Width="1.5" />
-    <InheritanceLine Type="ConversionMicroserviceAPI.Business.Converters.ToLiterConverter" FixedFromPoint="true">
-      <Path>
-        <Point X="5.5" Y="2.632" />
-        <Point X="5.5" Y="3.625" />
-        <Point X="3.5" Y="3.625" />
-        <Point X="3.5" Y="4" />
-      </Path>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Business\Converters\Volume\ToLiterConverter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConversionMicroserviceAPI.Business.Converters.ToCelsiusConverter">
-    <Position X="15" Y="8.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Business\Converters\ToCelsiusConverter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConversionMicroserviceAPI.Business.Converters.FahrenheitToCelsiusConverter">
-    <Position X="15" Y="10.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Business\Converters\ToCelsiusConverter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConversionMicroserviceAPI.Business.Converters.ToFahrenheitConverter">
-    <Position X="12.75" Y="8.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Business\Converters\ToFahrenheitConverter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ConversionMicroserviceAPI.Business.Converters.CelsiusToFahrenheitConverter">
-    <Position X="12.75" Y="10.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Business\Converters\ToFahrenheitConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Models.ConversionModel">
-    <Position X="3" Y="6.75" Width="1.5" />
+    <Position X="0.5" Y="6" Width="2" />
+    <AssociationLine Name="UnitFrom" Type="ConversionMicroserviceAPI.Business.Models.UnitModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.06" Y="0.314" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="UnitTo" Type="ConversionMicroserviceAPI.Business.Models.UnitModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.683" Y="0.256" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAIAAAAAAAEQAAAAAAAA=</HashCode>
       <FileName>Business\Models\ConversionModel.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UnitFrom" />
+      <Property Name="UnitTo" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Models.UnitModel">
-    <Position X="1" Y="10.75" Width="1.5" />
+    <Position X="0.5" Y="8.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAABAAAAAAAAAAABIAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Models\UnitModel.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UnitType" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="ConversionMicroserviceAPI.Business.Services.ConversionService" BaseTypeListCollapsed="true">
-    <Position X="8.25" Y="12.75" Width="1.5" />
+    <Position X="6.5" Y="10" Width="3" />
+    <AssociationLine Name="volumeConverters" Type="ConversionMicroserviceAPI.Business.Converters.IVolumeConverter" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.624" Y="10" />
+        <Point X="7.624" Y="7.375" />
+        <Point X="6.25" Y="7.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.376" Y="-0.728" />
+      </MemberNameLabel>
+    </AssociationLine>
     <AssociationLine Name="massConverters" Type="ConversionMicroserviceAPI.Business.Converters.IMassConverter" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="9.25" Y="12.75" />
-        <Point X="9.25" Y="9.124" />
-        <Point X="10" Y="9.124" />
+        <Point X="8.5" Y="10" />
+        <Point X="8.5" Y="9.872" />
+        <Point X="11.375" Y="9.872" />
+        <Point X="11.375" Y="8.625" />
+        <Point X="11" Y="8.625" />
       </Path>
-    </AssociationLine>
-    <AssociationLine Name="volumeConverters" Type="ConversionMicroserviceAPI.Business.Converters.IVolumeConverter" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="8.812" Y="12.75" />
-        <Point X="8.812" Y="9.561" />
-        <Point X="7.5" Y="9.561" />
-      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.331" Y="-1.348" />
+      </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAIECAAAAAAAQAAAAAACAgAAAAAAAQAAAAQAAAAAA=</HashCode>
       <FileName>Business\Services\ConversionService.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
-      <Property Name="massConverters" />
       <Property Name="volumeConverters" />
+      <Property Name="massConverters" />
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ConversionMicroserviceAPI.Controllers.ConverterController">
-    <Position X="5.75" Y="13.25" Width="1.5" />
+    <Position X="3" Y="10.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAAAQAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Controllers\ConverterController.cs</FileName>
@@ -205,28 +166,28 @@
     </ShowAsAssociation>
   </Class>
   <Interface Name="ConversionMicroserviceAPI.Business.Converters.IMassConverter">
-    <Position X="10" Y="8.25" Width="1.5" />
+    <Position X="9.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Converters\Mass\IMassConverter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ConversionMicroserviceAPI.Business.Converters.IVolumeConverter">
-    <Position X="6" Y="8.25" Width="1.5" />
+    <Position X="4.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAIAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Converters\Volume\IVolumeConverter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ConversionMicroserviceAPI.Business.Services.IConversionService">
-    <Position X="5.75" Y="10.75" Width="1.5" />
+    <Position X="3" Y="8.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Services\IConversionService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="ConversionMicroserviceAPI.Business.Models.UnitType">
-    <Position X="1" Y="13.25" Width="1.5" />
+    <Position X="0.75" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgACEAAA=</HashCode>
       <FileName>Business\Models\UnitModel.cs</FileName>

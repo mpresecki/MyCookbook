@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="UserMicroserviceAPI.Data.Repositories.Repository&lt;T&gt;" BaseTypeListCollapsed="true">
-    <Position X="7" Y="6" Width="1.5" />
+    <Position X="5.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAACAAAAAAAAAAAAAAAAAAAAQgAAgAAAAAAIIA=</HashCode>
       <FileName>Data\Repositories\Repository.cs</FileName>
@@ -39,14 +39,14 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="UserMicroserviceAPI.Data.UserContext">
-    <Position X="4.5" Y="6" Width="1.5" />
+    <Position X="2.75" Y="5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Data\UserContext.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UserMicroserviceAPI.Business.Services.UserService" BaseTypeListCollapsed="true">
-    <Position X="12.5" Y="6" Width="2.25" />
+    <Position X="11.25" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAoAAAAAAAEAAABAAMAAQAAAAAACAAAABAACAA=</HashCode>
       <FileName>Business\Services\UserService.cs</FileName>
@@ -55,20 +55,6 @@
       <Field Name="_userRepository" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="UserMicroserviceAPI.Business.Models.AuthenticateRequest">
-    <Position X="4" Y="10" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Business\Models\AuthenticateRequest.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="UserMicroserviceAPI.Business.Models.AuthenticateResponse">
-    <Position X="6.5" Y="10" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAg=</HashCode>
-      <FileName>Business\Models\AuthenticateResponse.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="UserMicroserviceAPI.Business.Models.UserListModel">
     <Position X="5.75" Y="0.75" Width="1.5" />
@@ -95,21 +81,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UserMicroserviceAPI.Business.Models.UserRoleModel">
-    <Position X="9.5" Y="4.25" Width="1.5" />
+    <Position X="3.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Business\Models\UserRoleModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="UserMicroserviceAPI.Business.MappingProfiles">
-    <Position X="4" Y="11.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Business\MappingProfiles.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="UserMicroservice.Controllers.UserController">
-    <Position X="9.25" Y="10" Width="1.5" />
+    <Position X="2.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAQAQAAAAAAIAAAABAAAAAAAAAAQABAA=</HashCode>
       <FileName>Controllers\UserController.cs</FileName>
@@ -119,14 +98,14 @@
     </ShowAsAssociation>
   </Class>
   <Interface Name="UserMicroserviceAPI.Data.Repositories.IRepository&lt;T&gt;">
-    <Position X="9.25" Y="6" Width="1.5" />
+    <Position X="8" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAAIIA=</HashCode>
       <FileName>Data\Repositories\IRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="UserMicroserviceAPI.Business.Services.IUserService">
-    <Position X="11.75" Y="10" Width="3.5" />
+    <Position X="5.25" Y="8" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAEAAAAAAMAAQAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Business\Services\IUserService.cs</FileName>

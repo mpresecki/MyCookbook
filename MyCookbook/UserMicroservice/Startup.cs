@@ -36,6 +36,8 @@ namespace UserMicroservice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             // konfigurira app postavke
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
@@ -143,10 +145,10 @@ namespace UserMicroservice
             app.UseRouting();
 
             // global cors policy
-            //app.UseCors(x => x
-            //    .WithOrigins("http://localhost:4200", "http://my-cookbook.azurewebsites.net")
-            //    .AllowAnyMethod()
-            //    .AllowAnyHeader());
+            app.UseCors(x => x
+                .WithOrigins("*")
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseCorsMiddleware();
 

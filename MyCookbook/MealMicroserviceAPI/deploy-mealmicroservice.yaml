@@ -24,7 +24,7 @@ spec:
         - name: DB_PW
           value: User1234
         - name: AppSettings__RecipeAPI
-          value: http://51.105.207.19/api/Recipe
+          value: http://recipemicroservice/api/Recipe
 ---
 apiVersion: v1
 kind: Service
