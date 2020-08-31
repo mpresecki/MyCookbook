@@ -2,12 +2,16 @@
  
 MyCookbook je web aplikacija za spremanje recepata i planiranja obroka koja se temelji na mikroservisima.
 
-Instalacija:
+Live web aplikacija je dostupna na adresi: http://my-cookbook.azurewebsites.net
+
+*\*koristi se besplatan Azure plan pa je moguća nedostupnost aplikacije zbog prekoračenja dnevnih limita*
+
+
+## Instalacija projekta na lokalno računalo:
 
 //ASP.Net Core projekt
 1. otvoriti MyCookbookAPI projekt u Visual Studiu i napraviti build
-2. projekt koristi Azure baze podataka pa se ovaj korak može preskočiti: 
-  ~~otvoriti Package Manager Console i izvršiti naredbu 'update-database' za RecipeMicroservice, MealMicroservice i UserMicroservice~~
+2. otvoriti Package Manager Console i izvršiti naredbu 'update-database' za RecipeMicroservice, MealMicroservice i UserMicroservice
 3. pokrenuti projekt
 
 //Angular projekt
