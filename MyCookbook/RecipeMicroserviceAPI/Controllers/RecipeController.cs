@@ -67,6 +67,8 @@ namespace RecipeMicroserviceAPI.Controllers
         public async Task DeleteRecipeAsync(long recipeId)
         {
             await _service.DeleteRecipeAsync(recipeId);
+            var accessToken = Request.Headers[HeaderNames.Authorization].ToString();
+            await _communicationService.DeleteMealsAsync(recipeId, accessToken);
         }
 
         [HttpGet]

@@ -25,6 +25,8 @@ spec:
           value: User1234
         - name: AppSettings__UserAPI
           value: http://usermicroservice/api/User
+        - name: AppSettings__MealAPI
+          value: http://mealmicroservice/api/Meal
 ---
 apiVersion: v1
 kind: Service

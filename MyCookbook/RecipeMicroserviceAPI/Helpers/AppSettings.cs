@@ -10,5 +10,7 @@ namespace RecipeMicroserviceAPI.Helpers
         public string Secret { get; set; }
 
         public string UserAPI { get; set; }
+
+        public string MealAPI { get; set; }
     }
 }

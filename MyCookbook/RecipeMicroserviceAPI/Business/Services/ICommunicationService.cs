@@ -9,5 +9,7 @@ namespace RecipeMicroserviceAPI.Business.Services
     public interface ICommunicationService
     {
         Task<UserModel> CheckUserAsync(long userId, string accessToken);
+
+        Task<bool> DeleteMealsAsync(long recipeId, string accessToken);
     }
 }

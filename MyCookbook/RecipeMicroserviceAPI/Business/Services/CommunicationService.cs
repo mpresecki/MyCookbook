@@ -53,5 +53,26 @@ namespace RecipeMicroserviceAPI.Business.Services
 
             return user;
         }
+
+        public async Task<bool> DeleteMealsAsync(long recipeId, string accessToken)
+        {
+            var uri = _appSettings.MealAPI + "?recipeId=" + recipeId;
+            var request = new HttpRequestMessage(HttpMethod.Delete, uri);
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.Add("User-Agent", "Request-User");
+            request.Headers.Add("Authorization", accessToken);
+
+            var client = _clientFactory.CreateClient();
+
+            var response = await client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

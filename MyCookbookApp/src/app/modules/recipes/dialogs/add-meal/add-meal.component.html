@@ -1,6 +1,8 @@
 <h1 mat-dialog-title>Plan a meal</h1>
 <div mat-dialog-content>
-  <p>Recipe: {{ data.recipeName }}</p>
+  <p>Recipe:
+    <a (click)="onRecipeClick(data.recipeId)" class="link">{{ data.recipeName }}</a>
+  </p>
 
   <form>
     <mat-form-field>

@@ -6,6 +6,7 @@ import { MealService } from 'src/app/core/services/meal.service';
 import { Recipe } from 'src/app/shared/models/recipe';
 import { User } from 'src/app/shared/models/user';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { Router } from '@angular/router';
 
 export interface DialogData {
   id: number;
@@ -31,7 +32,8 @@ export class AddMealComponent implements OnInit {
     public dialogRef: MatDialogRef<AddMealComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private mealService: MealService,
-    private authenticationService: AuthenticationService) {
+    private authenticationService: AuthenticationService,
+    private router: Router) {
       this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
 
@@ -61,6 +63,11 @@ export class AddMealComponent implements OnInit {
         });
       }
     }
+  }
+
+  onRecipeClick(recipeId): void {
+    this.onCancelClick();
+    this.router.navigate(['/recipes/detail/' + recipeId]);
   }
 
   onCancelClick(): void {

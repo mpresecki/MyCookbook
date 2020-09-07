@@ -96,6 +96,15 @@ namespace MealMicroserviceAPI.Business.Services
             await _repository.DeleteAsync(id);
         }
 
+        public async Task DeleteMealsByRecipeAsync(long recipeId)
+        {
+            var meals = await _repository.GetAll().Where(m => m.RecipeId == recipeId).ToListAsync();
+            foreach (var meal in meals)
+            {
+                await _repository.DeleteAsync(meal.Id);
+            }
+        }
+
         private async Task<string> GetRecipeNameAsync(long id, string accessToken)
         {
             var uri = _appSettings.RecipeAPI + "/" + id;

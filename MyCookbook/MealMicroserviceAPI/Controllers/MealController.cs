@@ -48,5 +48,11 @@ namespace MealMicroserviceAPI.Controllers
         {
             await _service.DeleteMealAsync(mealId);
         }
+
+        [HttpDelete]
+        public async Task DeleteMealsByRecipeAsync(long recipeId)
+        {
+            await _service.DeleteMealsByRecipeAsync(recipeId);
+        }
     }
 }

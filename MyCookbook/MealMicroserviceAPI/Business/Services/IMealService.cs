@@ -15,5 +15,7 @@ namespace MealMicroserviceAPI.Business.Services
         Task UpdateMealAsync(MealUpdateModel meal);
 
         Task DeleteMealAsync(long id);
+
+        Task DeleteMealsByRecipeAsync(long recipeId);
     }
 }
